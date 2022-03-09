@@ -7,11 +7,7 @@ require('dotenv').config();
 
 
 
-app.use('/' ,(req,res)=>{
-  
-})
+app.use('/' ,()=>{});
 
 
-app.listen(process.env.PORT,(req,res)=>{
-    console.log(`Server is up in ${process.env.PORT} `);
-});
+app.listen(process.env.PORT,()=>{});
