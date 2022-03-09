@@ -2,10 +2,10 @@
   "name": "wetech",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./server/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon node server.js"
+    "start": "nodemon node ./server/server.js"
   },
   "author": "",
   "license": "ISC",
