@@ -2,39 +2,37 @@ const posts = require('../models/posts-model');
 const user = require('../models/users-model');
 
 module.exports = {
-  getAllPosts: async (req, res) => {
-    await posts
-      .find()
-      .then(post => res.status(200).json(post))
-      .catch(err => res.status(500).json(err))
-  },
-  getPostById: async (req, res) => {
-    await posts
-      .findById(req.params.id)
-      .then(post => res.status(200).json(post))
-      .catch(err => res.status(500).json(err))
-  },
-  addPost: async (req, res) => {
-    await posts
-      .create(req.body)
-      .then(post =>
-        res.status(200).json({ message: 'Post added successfully', post })
-      )
-  },
-  updatePost: async (req, res) => {
-    try {
-      const post = await posts.findById(req.params.id)
-      if (post.userId === req.body.userId) {
-        await post.updateOne({ $set: req.body })
-        res.status(200).json({ message: 'The post as been updated' })
-      } else {
-        res.status(403).json({ message: 'you can update only your post' })
-      }
-    } catch (err) {
-      res.status(500).json(err)
+    getAllPosts : async (req,res) =>{
+        await posts.find()
+        .then(post => res.status(200).json(post))
+        .catch(err => res.status(500).json(err))
+    },
+    getPostById : async (req,res) =>{
+        await posts.findById(req.params.id)
+        .then(post => res.status(200).json(post))
+        .catch(err => res.status(500).json(err))
+    },
+    addPost:async (req,res)=>{
+        await posts.create(req.body)
+        .then(post => res.status(200).json({message:"Post added successfully",post}))
+        .catch(err => res.status(500).json(err))
+    },
+    updatePost : async (req,res)=>{
+        try{
+            const post = await posts.findById(req.params.id);
+            if(post.userId === req.body.userId){
+                await post.updateOne({$set: req.body})
+                res.status(200).json({message:"The post as been updated"})
+            }else{
+                res.status(403).json({message:"you can update only your post"})
+            }
+        }
+        catch(err){
+            res.status(500).json(err)
+        }
     }
-  },
-  deletePost: async (req, res) => {
+  ,
+  deletePost : async (req, res) => {
     try {
       const post = await posts.findById(req.params.id)
       if (post.userId === req.body.userId) {
@@ -60,7 +58,7 @@ module.exports = {
     } catch (err) {
       res.status(500).json(err)
     }
-  }
+  }}
   // timelinePosts: async (req, res) => {
   //   try {
   //     //currentUser
@@ -80,4 +78,4 @@ module.exports = {
   //     res.status(500).json(error)
   //   }
   // }
-}
+
