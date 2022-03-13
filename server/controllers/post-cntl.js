@@ -15,6 +15,7 @@ module.exports = {
     addPost:async (req,res)=>{
         await posts.create(req.body)
         .then(post => res.status(200).json({message:"Post added successfully",post}))
+        .catch(err => res.status(500).json(err))
     },
     updatePost : async (req,res)=>{
         try{

@@ -6,7 +6,7 @@ postRouter.get('/:id',getPostById)
 postRouter.post('/',addPost)
 postRouter.put('/:id',updatePost)
 postRouter.delete('/:id',deletePost)
-postRouter.put('/id:/like',likePost)
+postRouter.put('/:id/like',likePost)
 
 
 
