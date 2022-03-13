@@ -1,5 +1,5 @@
 const posts = require('../models/posts-model');
-
+const user = require('../models/users-model');
 
 module.exports = {
     getAllPosts : async (req,res) =>{
@@ -31,34 +31,51 @@ module.exports = {
             res.status(500).json(err)
         }
     }
-    ,
-    deletePost: async (req,res)=>{
-        try{
-            const post = await posts.findById(req.params.id);
-            if(post.userId === req.body.userId){
-                await post.deleteOne();
-                res.status(200).json({message:"The post as been deleted"});
-            }else{
-                res.status(403).json({message:"you can delete only your post"});
-            }
-        }
-        catch(err){
-            res.status(500).json(err);
-        }
+  ,
+  deletePost : async (req, res) => {
+    try {
+      const post = await posts.findById(req.params.id)
+      if (post.userId === req.body.userId) {
+        await post.deleteOne()
+        res.status(200).json({ message: 'The post as been deleted' })
+      } else {
+        res.status(403).json({ message: 'you can delete only your post' })
+      }
+    } catch (err) {
+      res.status(500).json(err)
     }
-    ,
-    likePost:async (req,res)=>{
-        try{
-            const post = await posts.findById(req.params.id);
-            if(!post.likes.includes(req.body.userId)){
-                await post.updateOne({$push: {likes: req.body.userId}});
-                res.status(200).json({message:"Post has been liked"});
-            }else{
-                await post.updateOne({$pull: {likes: req.body.userId}});
-                res.status(200).json({message:"Post has been disliked"});
-            }
-        }catch(err){
-            res.status(500).json(err);
-        }
+  },
+  likePost: async (req, res) => {
+    try {
+      const post = await posts.findById(req.params.id)
+      if (!post.likes.includes(req.body.userId)) {
+        await post.updateOne({ $push: { likes: req.body.userId } })
+        res.status(200).json({ message: 'Post has been liked' })
+      } else {
+        await post.updateOne({ $pull: { likes: req.body.userId } })
+        res.status(200).json({ message: 'Post has been disliked' })
+      }
+    } catch (err) {
+      res.status(500).json(err)
     }
-}
+  }}
+  // timelinePosts: async (req, res) => {
+  //   try {
+  //     //currentUser
+  //     const currentUser = await user.findById(req.body.userId)
+  //     const userPost = posts.find({ userId: currentUser._id })
+  //     const friendsPost = await Promise.all(
+  //       currentUser.followings.map((friendId) => {
+  //         return posts.find({ userId: friendId })
+  //       })
+  //       );
+  //       // res.json(userPost.concat(...friendsPost))
+  //       res.json({...friendsPost})
+  //       // console.log(friendsPost);rs
+  //       // console.log(userPost);
+
+  //   } catch (error) {
+  //     res.status(500).json(error)
+  //   }
+  // }
+
