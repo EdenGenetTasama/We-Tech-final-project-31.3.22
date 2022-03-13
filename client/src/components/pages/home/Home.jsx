@@ -1,6 +1,5 @@
-import React from 'react'
-import Topbar from "../../parts/topbar/Topbar"
-
+import Topbar from "../../parts/topbar/Topbar";
+import Feed from "../../parts/feed/Feed";
 
 export default function Home() {
   return (
