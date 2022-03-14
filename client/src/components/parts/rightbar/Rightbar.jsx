@@ -1,6 +1,8 @@
 import "./rightbar.css";
 import { users } from "../../../dummyData";
 import Online from "../../online/Online";
+
+
 export default function Rightbar() {
   return (
     <div className="rightBar">

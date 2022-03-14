@@ -1,84 +1,114 @@
 export const posts=[{
-    "id": 1,
+    "id":100,
     "desc": "Lava gull",
+    "userName":"nick",
     "photo": "http://dummyimage.com/216x100.png/5fa2dd/ffffff",
     "date": "10/16/2021",
-    "userId": 2000,
+    "userId": 1,
     "like": "3580197333691331",
-    "comment": "Lotus"
+    "comment": 9,
+    "postImages":"https://cdn.pixabay.com/photo/2020/03/09/17/51/narcis-4916584__340.jpg"
   }, {
-    "id": 2,
+    "id": 200,
     "desc": "Dog, black-tailed prairie",
+    "userName":"Roma",
     "photo": "http://dummyimage.com/111x100.png/5fa2dd/ffffff",
     "date": "10/6/2021",
-    "userId": 2004,
-    "like": "3554227536940821",
-    "comment": "GMC"
+    "userId": 2,
+    "like": "9",
+    "comment": "GMC",
+    "postImages":"https://cdn.pixabay.com/photo/2022/03/02/13/42/peace-7043225__340.jpg"
   }, {
-    "id": 3,
+    "id": 300,
     "desc": "Four-horned antelope",
+    "userName":"Dani",
     "photo": "http://dummyimage.com/179x100.png/cc0000/ffffff",
     "date": "5/22/2021",
-    "userId": 1993,
-    "like": "3535316318859509",
-    "comment": "Ford"
+    "userId": 3,
+    "like": "22",
+    "comment": "50",
+    "postImages":"https://cdn.pixabay.com/photo/2017/06/05/07/58/butterfly-2373175__340.png"
+
   }, {
-    "id": 4,
+    "id": 400,
     "desc": "Colobus, black and white",
+    "userName":"Avi",
     "photo":  "http://dummyimage.com/144x100.png/ff4444/ffffff",
     "date": "7/21/2021",
-    "userId": 2005,
-    "like": "5100179361015670",
-    "comment": "Kia"
+    "userId": 4,
+    "like": "30",
+    "comment": "10",
+    "postImages":"https://cdn.pixabay.com/photo/2020/02/10/12/47/girl-4836394__340.jpg"
+
   }, {
-    "id": 5,
+    "id": 500,
     "desc": "Leopard",
+    "userName":"Rachel",
     "photo": "http://dummyimage.com/233x100.png/cc0000/ffffff",
     "date": "1/20/2022",
-    "userId": 1993,
-    "like": "4936426291584058",
-    "comment": "Subaru"
+    "userId": 5,
+    "like": "26",
+    "comment": "3",
+    "postImages":"https://cdn.pixabay.com/photo/2020/02/10/12/47/girl-4836394__340.jpg"
+
   }, {
-    "id": 6,
+    "id": 600,
     "desc": "Turtle, long-necked",
+    "userName":"Ross",
     "photo": "http://dummyimage.com/193x100.png/5fa2dd/ffffff",
     "date": "1/5/2022",
-    "userId": 1993,
-    "like": "3556038067054546",
-    "comment": "Audi"
+    "userId": 6,
+    "like": "35",
+    "comment": "9",
+    "postImages":"https://cdn.pixabay.com/photo/2014/09/07/21/34/child-438373__340.jpg"
+
   }, {
-    "id": 7,
+    "id": 700,
     "desc": "Defassa waterbuck",
+    "userName":"Monica",
     "photo": "http://dummyimage.com/159x100.png/ff4444/ffffff",
     "date": "11/5/2021",
-    "userId": 2000,
-    "like": "201431439127162",
-    "comment": "Ford"
+    "userId": 7,
+    "like": "2",
+    "comment": "4",
+    "postImages":"https://cdn.pixabay.com/photo/2014/09/07/21/34/child-438373__340.jpg"
+
   }, {
-    "id": 8,
+    "id": 800,
     "desc": "Waxbill, violet-eared",
+    "userName":"Chandler",
     "photo": "http://dummyimage.com/190x100.png/5fa2dd/ffffff",
     "date": "3/21/2021",
-    "userId": 2003,
-    "like": "3579508683680000",
-    "comment": "Mercedes-Benz"
+    "userId": 8,
+    "like": "0",
+    "comment": "46",
+    "postImages":"https://cdn.pixabay.com/photo/2014/09/07/21/34/child-438373__340.jpg"
+
   }, {
-    "id": 9,
-    "desc": "Lapwing, southern",
-    "photo": "http://dummyimage.com/233x100.png/5fa2dd/ffffff",
+    "id": 900,
+    "userName":"Joey",
+    "photo": "https://cdn.pixabay.com/photo/2019/09/28/05/10/sunset-4509879__340.jpg",
     "date": "2/3/2022",
-    "userId": 2004,
-    "like": "30342243595980",
-    "comment": "Toyota"
+    "userId": 9,
+    "like": "4",
+    "comment": "40",
+    "postImages":"https://cdn.pixabay.com/photo/2020/06/15/17/35/me-nots-5302712__340.jpg"
+
   }, {
-    "id": 10,
+    "id": 1000,
     "desc": "Bear, black",
+    "userName":"Yossi",
     "photo": "http://dummyimage.com/197x100.png/ff4444/ffffff",
     "date": "6/23/2021",
-    "userId": 2009,
-    "like": "6334051795411351",
-    "comment": "Volkswagen"
+    "userId": 10,
+    "like": "49",
+    "comment": "8",
+    "postImages":"https://cdn.pixabay.com/photo/2020/06/01/22/23/eyes-5248678__340.jpg"
+
   }];
+
+
+
 
   export const users =[{
     "id": 1,
