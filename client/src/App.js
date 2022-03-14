@@ -5,8 +5,8 @@ import Profile from './components/pages/profile/Profile.jsx'
 function App() {
   return (
     <div className="App">
-      {/* <Home/> */}
-      <Profile/>
+      <Home/>
+      {/* <Profile/> */}
     </div>
   );
 }
