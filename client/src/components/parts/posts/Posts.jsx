@@ -1,12 +1,13 @@
 import "./posts.css";
 import { MoreVert,Favorite,ThumbUp } from "@material-ui/icons";
-import { users } from "../../../dummyData";
+import { useState } from "react";
+import {format} from 'timeago.js'
 
 
 
 export default function Posts({post}) {
-  // const user = users.filter((user)=> user.id==post.userId[0].userName);
-  // console.log(user[0].userName);
+  // const user = users.filter((user)=> user.id===post.userId? console.log(post.userId[0].userName): console.log("boom"));
+  // console.log(user);
   return (
     <div className="postContainer">
       <div className="postWrapper">
@@ -17,8 +18,8 @@ export default function Posts({post}) {
               src={post.photo}
               alt=""
             />
-            <span className="postUserName"></span>
-            <span className="postUserDate">{post.date}</span>
+            <span className="postUserName">{post.userName}</span>
+            <span className="postUserDate">{format(post.createdAt)}</span>
           </div>
 
           <div className="postTopRight">
@@ -34,9 +35,9 @@ export default function Posts({post}) {
         <div className="postBottom">
 
             <div className="postBottomLeft">
-              <span className="LikeIcon"><Favorite htmlColor='red'/></span>
-              <span className="LikeIcon"> <ThumbUp htmlColor='blue'/> </span>
-                <div className="postLikeCounter">{post.like} people like it</div> 
+              <span className="LikeIcon"><Favorite htmlColor='red' onClick={likeHandler}/></span>
+              <span className="LikeIcon"> <ThumbUp htmlColor='blue' onClick={likeHandler}/> </span>
+                <div className="postLikeCounter">{like} people like it</div> 
            </div>
 
 
