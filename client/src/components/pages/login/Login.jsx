@@ -7,7 +7,7 @@ export default function Login() {
       <div className="loginLeft">
         <h3 className="loginLogo">WeTechSocial</h3>
         <span className="LoginDesc">
-            connect with friends and the world around you on LamaSocial
+            connect with friends and the world around you on WeTechSocial
         </span>
       </div>
       <div className="loginRight">
