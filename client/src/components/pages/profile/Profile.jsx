@@ -2,10 +2,17 @@ import Topbar from "../../parts/topbar/Topbar";
 import Sidebar from "../../parts/sidebar/Sidebar";
 import Feed from "../../parts/feed/Feed";
 import Rightbar from "../../parts/rightbar/Rightbar";
+import { useParams } from "react-router-dom";
+import {users,posts} from "../../../dummyData";
+
 import "./profile.css";
 
 export default function Profile() {
-  const PF = process.env.REACT_APP_PUBLIC_FOLDER 
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER ;
+  const {userName} = useParams();
+  const currentUser = users.filter((user)=> user.userName == userName);
+  const currentUserPost = posts.filter((user)=> currentUser[0].id ===user.userId);
+
   return (
     <>
       <Topbar />
@@ -16,23 +23,23 @@ export default function Profile() {
             <div className="profileCover">
               <img
                 className="profileCoverImg"
-                src="/assets/persons/family-6398107_1920.jpg"
+                src={currentUser[0].profileCoverPicture?currentUser[0].profileCoverPicture:"https://pharem-project.eu/wp-content/themes/consultix/images/no-image-found-360x250.png" }
                 alt=""
               />
               <img
                 className="profileUserImg"
-                src="/assets/persons/3.jpg"
+                src={currentUser[0].profilePicture}
                 alt=""
               />
             </div>
             <div className="profileInfo">
-              <h4 className="profileInfoName">Ella Mangolian</h4>
-              <span className="profileIDescription">Hello There</span>
+              <h4 className="profileInfoName">{currentUser[0].userName}</h4>
+              <span className="profileIDescription">{currentUserPost[0].desc}</span>
             </div>
           </div>
           <div className="profileRightBottom">
             <Feed />
-            <Rightbar />
+            <Rightbar profile/>
           </div>
         </div>
       </div>

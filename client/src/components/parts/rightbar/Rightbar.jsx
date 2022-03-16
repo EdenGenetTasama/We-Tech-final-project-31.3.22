@@ -2,11 +2,10 @@ import "./rightbar.css";
 import { users } from "../../../dummyData";
 import Online from "../../online/Online";
 
-
-export default function Rightbar() {
-  return (
-    <div className="rightBar">
-      <div className="rightBarWrapper">
+export default function Rightbar({ profile }) {
+  const HomeRigthBar = () => {
+    return (
+      <>
         <div className="topicContainer">
           <img className="topicImg" src="/assets/persons/gift.png" alt="" />
           <span className="topicText">
@@ -16,10 +15,74 @@ export default function Rightbar() {
         <img src="/assets/persons/tech-career.png" className="adImg" />
         <h4 className="rightBarTitle">Online Friends</h4>
         <ul className="rightBarFriendList">
-          {users.map(
-            u => <Online key={u.id} user={u}/>
-          )}
+          {users.map((u) => (
+            <Online key={u.id} user={u} />
+          ))}
         </ul>
+      </>
+    );
+  };
+
+  const ProfileRigthBar = ()=>{
+    return <>
+    <h4 className="rightBarTitleFirstPart">User information</h4>
+    <div className="rigthBarInfo">
+      <div className="rigthbarInfoItem">
+        <span className="rigthbarInfoKey">City: </span>
+        <span className="rigthbarInfoValue">New York</span>
+      </div>
+
+      <div className="rigthbarInfoItem">
+        <span className="rigthbarInfoKey">From: </span>
+        <span className="rigthbarInfoValue">Israel</span>
+      </div>
+
+      <div className="rigthbarInfoItem">
+        <span className="rigthbarInfoKey">Relationship: </span>
+        <span className="rigthbarInfoValue">Single</span>
+      </div>
+
+      <h4 className="rightBarTitleFirstPart">User Friend's</h4>
+      <div className="rigthbarFollowings">
+        <div className="rigthbarFollowing">
+          <img src="/assets/persons/2.jpg" alt="" className="rigthbarFollowingIma" />
+          <span className="rigthbarFollowingName">John Carter</span>
+        </div>
+
+        <div className="rigthbarFollowing">
+          <img src="/assets/persons/3.jpg" alt="" className="rigthbarFollowingIma" />
+          <span className="rigthbarFollowingName">John Carter</span>
+        </div>
+
+        <div className="rigthbarFollowing">
+          <img src="/assets/persons/3.jpg" alt="" className="rigthbarFollowingIma" />
+          <span className="rigthbarFollowingName">John Carter</span>
+        </div>
+
+        <div className="rigthbarFollowing">
+          <img src="/assets/persons/3.jpg" alt="" className="rigthbarFollowingIma" />
+          <span className="rigthbarFollowingName">John Carter</span>
+        </div>
+
+        <div className="rigthbarFollowing">
+          <img src="/assets/persons/3.jpg" alt="" className="rigthbarFollowingIma" />
+          <span className="rigthbarFollowingName">John Carter</span>
+        </div>
+
+        <div className="rigthbarFollowing">
+          <img src="/assets/persons/1.jpg" alt="" className="rigthbarFollowingIma" />
+          <span className="rigthbarFollowingName">John Carter</span>
+        </div>
+      </div>
+    </div>
+
+
+    </>
+  }
+  return (
+    <div className="rightBar">
+      <div className="rightBarWrapper">
+        {profile? <ProfileRigthBar/>:<HomeRigthBar/>}
       </div>
     </div>
   );

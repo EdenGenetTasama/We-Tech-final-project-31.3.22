@@ -113,30 +113,38 @@ export const posts=[{
   export const users =[{
     "id": 1,
     "profilePicture": "http://dummyimage.com/243x100.png/dddddd/000000",
+    "profileCoverPicture":"https://png.pngtree.com/thumb_back/fh260/background/20200714/pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg",
     "userName": "Gris Simion"
   }, {
     "id": 2,
     "profilePicture": "http://dummyimage.com/120x100.png/dddddd/000000",
+    "profileCoverPicture":"https://media.istockphoto.com/vectors/abstract-blurred-colorful-background-vector-id1248542684?k=20&m=1248542684&s=612x612&w=0&h=1yKiRrtPhiqUJXS_yJDwMGVHVkYRk2pJX4PG3TT4ZYM=",
     "userName": "Laraine Hearson"
   }, {
     "id": 3,
     "profilePicture": "http://dummyimage.com/227x100.png/cc0000/ffffff",
+    "profileCoverPicture":"https://media.istockphoto.com/vectors/abstract-blurred-colorful-background-vector-id1248542684?k=20&m=1248542684&s=612x612&w=0&h=1yKiRrtPhiqUJXS_yJDwMGVHVkYRk2pJX4PG3TT4ZYM=",
     "userName": "Shir Godwyn"
   }, {
     "id": 4,
     "profilePicture": "http://dummyimage.com/215x100.png/cc0000/ffffff",
+    "profileCoverPicture":"https://png.pngtree.com/thumb_back/fh260/background/20200714/pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg",
     "userName": "Eb Kimbell"
   }, {
     "id": 5,
     "profilePicture": "http://dummyimage.com/210x100.png/dddddd/000000",
+    "profileCoverPicture":"https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?size=626&ext=jpg",
+
     "userName": "Goraud Glitherow"
   }, {
     "id": 6,
     "profilePicture": "http://dummyimage.com/104x100.png/ff4444/ffffff",
+    "profileCoverPicture":"https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?size=626&ext=jpg",
     "userName": "Vanya Donet"
   }, {
     "id": 7,
     "profilePicture": "http://dummyimage.com/128x100.png/cc0000/ffffff",
+    "profileCoverPicture":"https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?size=626&ext=jpg",
     "userName": "Dionisio Trimmill"
   }, {
     "id": 8,
@@ -152,43 +160,43 @@ export const posts=[{
     "userName": "Erhart Faithorn"
   },
   {
-    "id": 1,
+    "id": 11,
     "profilePicture": "http://dummyimage.com/231x100.png/cc0000/ffffff",
     "userName": "Calida Pickervance"
   }, {
-    "id": 2,
+    "id": 12,
     "profilePicture": "http://dummyimage.com/151x100.png/dddddd/000000",
     "userName": "Latia Brimham"
   }, {
-    "id": 3,
+    "id": 13,
     "profilePicture": "http://dummyimage.com/158x100.png/dddddd/000000",
     "userName": "Artemas Devonald"
   }, {
-    "id": 4,
+    "id": 14,
     "profilePicture": "http://dummyimage.com/131x100.png/ff4444/ffffff",
     "userName": "Ann Sharples"
   }, {
-    "id": 5,
+    "id": 15,
     "profilePicture": "http://dummyimage.com/104x100.png/5fa2dd/ffffff",
     "userName": "Silvana Fibbit"
   }, {
-    "id": 6,
+    "id": 16,
     "profilePicture": "http://dummyimage.com/165x100.png/dddddd/000000",
     "userName": "Oriana Furlonge"
   }, {
-    "id": 7,
+    "id": 17,
     "profilePicture": "http://dummyimage.com/121x100.png/ff4444/ffffff",
     "userName": "Editha Fishleigh"
   }, {
-    "id": 8,
+    "id": 18,
     "profilePicture": "http://dummyimage.com/207x100.png/5fa2dd/ffffff",
     "userName": "Jennica Mackin"
   }, {
-    "id": 9,
+    "id": 19,
     "profilePicture": "http://dummyimage.com/173x100.png/ff4444/ffffff",
     "userName": "Luca McGettigan"
   }, {
-    "id": 10,
+    "id": 20,
     "profilePicture": "http://dummyimage.com/183x100.png/5fa2dd/ffffff",
     "userName": "Odella Blaszczynski"
   }, {
