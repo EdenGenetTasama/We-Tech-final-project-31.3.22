@@ -4,6 +4,7 @@ import { useState } from "react";
 import {format} from 'timeago.js';
 import {users} from "../../../dummyData";
 
+
 export default function Posts({post}) {
   const [like,setLike] = useState(post.like);
   const [isLiked,setIsLiked] =useState(false) ;
@@ -11,10 +12,6 @@ export default function Posts({post}) {
     setLike(isLiked?like - 1 : like + 1)
     setIsLiked(!isLiked)
   }
-
-  // let userProfile = users.filter((user)=> user.id ==  post.userId[0].photo );
-  // console.log(userProfile);
-
   return (
     <div className="postContainer">
       <div className="postWrapper">

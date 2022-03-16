@@ -7,7 +7,7 @@ export default function Register() {
       <div className="loginLeft">
         <h3 className="loginLogo">WeTechSocial</h3>
         <span className="LoginDesc">
-            connect with friends and the world around you on WeTechSocial
+            connect with friends and the world around you on We-Tech Social
         </span>
       </div>
       <div className="loginRight">
