@@ -3,7 +3,9 @@ import Sidebar from "../../parts/sidebar/Sidebar";
 import Feed from "../../parts/feed/Feed";
 import Rightbar from "../../parts/rightbar/Rightbar";
 import "./profile.css";
+
 export default function Profile() {
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER 
   return (
     <>
       <Topbar />
@@ -29,10 +31,9 @@ export default function Profile() {
             </div>
           </div>
           <div className="profileRightBottom">
-              <Feed />
-          <Rightbar />
+            <Feed />
+            <Rightbar />
           </div>
-        
         </div>
       </div>
     </>

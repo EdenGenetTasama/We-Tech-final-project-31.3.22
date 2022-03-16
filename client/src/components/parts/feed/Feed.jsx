@@ -12,9 +12,8 @@ export default function Feed() {
           <Posts key={p.id} post={p}/>
           ))}
 
-          
-
         </div>
     </div>
   )
 }
+  
