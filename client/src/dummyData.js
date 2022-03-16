@@ -15,13 +15,8 @@ export const posts=[{
     "photo": "http://dummyimage.com/111x100.png/5fa2dd/ffffff",
     "date": "10/6/2021",
     "userId": 2,
-<<<<<<< HEAD
     "like": "9",
     "comment": "100",
-=======
-    "like": "",
-    "comment": "GMC",
->>>>>>> fe5a6036354cef755d42bb12392d790a12b9e708
     "postImages":"https://cdn.pixabay.com/photo/2022/03/02/13/42/peace-7043225__340.jpg"
   }, {
     "id": 300,

@@ -9,14 +9,7 @@ import {BrowserRouter,Routes,Route,Link} from 'react-router-dom';
 
 function App() {
   return (
-<<<<<<< HEAD
     <div className="App">
-      <Home/>
-
-      {/* <Profile/> */}
-
-    </div>
-=======
     <BrowserRouter>
     <Routes>
       <Route exact path="/" element={<Home/>}> </Route>
@@ -25,7 +18,7 @@ function App() {
       <Route path="/Profile" element={ <Profile/>}> </Route>
     </Routes>
     </BrowserRouter>
->>>>>>> fe5a6036354cef755d42bb12392d790a12b9e708
+    </div>
   );
 }
 
