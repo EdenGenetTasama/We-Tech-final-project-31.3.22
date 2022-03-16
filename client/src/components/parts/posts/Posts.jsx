@@ -2,7 +2,6 @@ import "./posts.css";
 import { MoreVert,Favorite,ThumbUp } from "@material-ui/icons";
 import { useState } from "react";
 import {format} from 'timeago.js';
-import {users} from "../../../dummyData";
 
 
 export default function Posts({post}) {
