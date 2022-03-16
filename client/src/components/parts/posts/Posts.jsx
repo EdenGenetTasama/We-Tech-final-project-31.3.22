@@ -1,13 +1,20 @@
 import "./posts.css";
 import { MoreVert,Favorite,ThumbUp } from "@material-ui/icons";
 import { useState } from "react";
-import {format} from 'timeago.js'
-
-
+import {format} from 'timeago.js';
+import {users} from "../../../dummyData";
 
 export default function Posts({post}) {
-  // const user = users.filter((user)=> user.id===post.userId? console.log(post.userId[0].userName): console.log("boom"));
-  // console.log(user);
+  const [like,setLike] = useState(post.like);
+  const [isLiked,setIsLiked] =useState(false) ;
+  const likeHandler = ()=>{
+    setLike(isLiked?like - 1 : like + 1)
+    setIsLiked(!isLiked)
+  }
+
+  // let userProfile = users.filter((user)=> user.id ==  post.userId[0].photo );
+  // console.log(userProfile);
+
   return (
     <div className="postContainer">
       <div className="postWrapper">
