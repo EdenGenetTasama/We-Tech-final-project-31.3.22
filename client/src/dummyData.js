@@ -16,7 +16,7 @@ export const posts=[{
     "date": "10/6/2021",
     "userId": 2,
     "like": "9",
-    "comment": "GMC",
+    "comment": "100",
     "postImages":"https://cdn.pixabay.com/photo/2022/03/02/13/42/peace-7043225__340.jpg"
   }, {
     "id": 300,

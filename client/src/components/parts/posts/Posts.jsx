@@ -5,8 +5,8 @@ import { users } from "../../../dummyData";
 
 
 export default function Posts({post}) {
-  // const user = users.filter((user)=> user.id==post.userId[0].userName);
-  // console.log(user[0].userName);
+  const user = users.filter((user)=> user.id===post.userId? console.log(post.userId[0].userName): console.log("boom"));
+  console.log(user);
   return (
     <div className="postContainer">
       <div className="postWrapper">
