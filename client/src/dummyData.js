@@ -5,7 +5,7 @@ export const posts=[{
     "photo": "http://dummyimage.com/216x100.png/5fa2dd/ffffff",
     "date": "10/16/2021",
     "userId": 1,
-    "like": "3580197333691331",
+    "like": "",
     "comment": 9,
     "postImages":"https://cdn.pixabay.com/photo/2020/03/09/17/51/narcis-4916584__340.jpg"
   }, {
@@ -16,7 +16,7 @@ export const posts=[{
     "date": "10/6/2021",
     "userId": 2,
     "like": "9",
-    "comment": "GMC",
+    "comment": "100",
     "postImages":"https://cdn.pixabay.com/photo/2022/03/02/13/42/peace-7043225__340.jpg"
   }, {
     "id": 300,
@@ -25,7 +25,7 @@ export const posts=[{
     "photo": "http://dummyimage.com/179x100.png/cc0000/ffffff",
     "date": "5/22/2021",
     "userId": 3,
-    "like": "22",
+    "like": "",
     "comment": "50",
     "postImages":"https://cdn.pixabay.com/photo/2017/06/05/07/58/butterfly-2373175__340.png"
 
@@ -36,7 +36,7 @@ export const posts=[{
     "photo":  "http://dummyimage.com/144x100.png/ff4444/ffffff",
     "date": "7/21/2021",
     "userId": 4,
-    "like": "30",
+    "like": "",
     "comment": "10",
     "postImages":"https://cdn.pixabay.com/photo/2020/02/10/12/47/girl-4836394__340.jpg"
 
@@ -47,7 +47,7 @@ export const posts=[{
     "photo": "http://dummyimage.com/233x100.png/cc0000/ffffff",
     "date": "1/20/2022",
     "userId": 5,
-    "like": "26",
+    "like": "",
     "comment": "3",
     "postImages":"https://cdn.pixabay.com/photo/2020/02/10/12/47/girl-4836394__340.jpg"
 
@@ -58,7 +58,7 @@ export const posts=[{
     "photo": "http://dummyimage.com/193x100.png/5fa2dd/ffffff",
     "date": "1/5/2022",
     "userId": 6,
-    "like": "35",
+    "like": "",
     "comment": "9",
     "postImages":"https://cdn.pixabay.com/photo/2014/09/07/21/34/child-438373__340.jpg"
 
@@ -69,7 +69,7 @@ export const posts=[{
     "photo": "http://dummyimage.com/159x100.png/ff4444/ffffff",
     "date": "11/5/2021",
     "userId": 7,
-    "like": "2",
+    "like": "",
     "comment": "4",
     "postImages":"https://cdn.pixabay.com/photo/2014/09/07/21/34/child-438373__340.jpg"
 
@@ -80,7 +80,7 @@ export const posts=[{
     "photo": "http://dummyimage.com/190x100.png/5fa2dd/ffffff",
     "date": "3/21/2021",
     "userId": 8,
-    "like": "0",
+    "like": "",
     "comment": "46",
     "postImages":"https://cdn.pixabay.com/photo/2014/09/07/21/34/child-438373__340.jpg"
 
@@ -90,7 +90,7 @@ export const posts=[{
     "photo": "https://cdn.pixabay.com/photo/2019/09/28/05/10/sunset-4509879__340.jpg",
     "date": "2/3/2022",
     "userId": 9,
-    "like": "4",
+    "like": "",
     "comment": "40",
     "postImages":"https://cdn.pixabay.com/photo/2020/06/15/17/35/me-nots-5302712__340.jpg"
 
@@ -101,7 +101,7 @@ export const posts=[{
     "photo": "http://dummyimage.com/197x100.png/ff4444/ffffff",
     "date": "6/23/2021",
     "userId": 10,
-    "like": "49",
+    "like": "",
     "comment": "8",
     "postImages":"https://cdn.pixabay.com/photo/2020/06/01/22/23/eyes-5248678__340.jpg"
 
