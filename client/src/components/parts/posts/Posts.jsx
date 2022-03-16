@@ -6,8 +6,12 @@ import {format} from 'timeago.js'
 
 
 export default function Posts({post}) {
-  // const user = users.filter((user)=> user.id===post.userId? console.log(post.userId[0].userName): console.log("boom"));
-  // console.log(user);
+  const [like,setLike] = useState(post.like);
+  const [isLiked,setIsLiked] =useState(false) ;
+  const likeHandler = ()=>{
+    setLike(isLiked?like - 1 : like + 1)
+    setIsLiked(!isLiked)
+  }
   return (
     <div className="postContainer">
       <div className="postWrapper">
