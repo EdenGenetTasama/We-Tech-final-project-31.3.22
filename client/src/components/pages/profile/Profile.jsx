@@ -7,9 +7,7 @@ import {users,posts} from "../../../dummyData";
 import "./profile.css";
 
 export default function Profile() {
-  debugger
-  const PF = process.env;
-  console.log(`${PF}`);
+
   const {userName} = useParams();
   const currentUser = users.filter((user)=> user.userName == userName);
   const currentUserPost = posts.filter((user)=> currentUser[0].id ===user.userId);
