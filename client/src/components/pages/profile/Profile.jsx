@@ -4,11 +4,12 @@ import Feed from "../../parts/feed/Feed";
 import Rightbar from "../../parts/rightbar/Rightbar";
 import { useParams } from "react-router-dom";
 import {users,posts} from "../../../dummyData";
-
 import "./profile.css";
 
 export default function Profile() {
-  const PF = process.env.REACT_APP_PUBLIC_FOLDER ;
+  debugger
+  const PF = process.env;
+  console.log(`${PF}`);
   const {userName} = useParams();
   const currentUser = users.filter((user)=> user.userName == userName);
   const currentUserPost = posts.filter((user)=> currentUser[0].id ===user.userId);
@@ -38,7 +39,7 @@ export default function Profile() {
             </div>
           </div>
           <div className="profileRightBottom">
-            <Feed />
+            <Feed/>
             <Rightbar profile/>
           </div>
         </div>
