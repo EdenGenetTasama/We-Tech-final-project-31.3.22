@@ -29,6 +29,21 @@ const UserSchema = new mongoose.Schema({
         required:true,
         min:6
     },
+    city:{
+        type:String,
+        required:true,
+        min:6
+    },
+    from:{
+        type:String,
+        required:true,
+        min:6
+    },
+    relationship:{
+        type:String,
+        required:true,
+        min:6
+    },
     profilePicture:{
         type:String,
         default:""
