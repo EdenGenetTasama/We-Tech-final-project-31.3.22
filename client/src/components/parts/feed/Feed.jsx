@@ -1,26 +1,33 @@
 import "./feed.css";
 import Share from "../share/Share";
 import Posts from "../posts/Posts";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function Feed() {
-  const [post,usePost] = useState([]);
+export default function Feed({ userName }) {
+  const [post, setPost] = useState([]);
 
-  useEffect(()=>{
-    const FetchPost =async()=>{
-      const respond = await axios.get("http://localhost:8800/posts/timeline/622b2255aa086d5555abea6a",()=>{});
-      usePost(...respond.data);
-    }
+  useEffect(() => {
+    const FetchPost = async () => {
+      const respond = userName
+        ? await axios.get(
+            "http://localhost:8800/posts/profile/"+userName
+          )
+        : await axios.get(
+            "http://localhost:8800/posts/timeline/622b2255aa086d5555abea6a"
+          );
+          setPost(...respond.data);  };
     FetchPost();
-  },[])
+  }, [userName]);
+
+
   return (
     <div className="feed">
       <div className="feedWrapper">
         <Share />
-        {post.map(p=>(
-          <Posts key={p._id} post={p}/>
-          ))}
+        {post.map((p) => (
+          <Posts key={p._id} post={p} />
+        ))}
       </div>
     </div>
   );
