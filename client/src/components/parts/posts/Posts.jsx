@@ -32,10 +32,10 @@ export default function Posts({post}) {
       <div className="postWrapper">
         <div className="postTop">
           <div className="postTopLeft">
-            <Link to={`/profile/${user.userName}${user.userLastName}`}>
+            <Link to={`/profile/${user.userName}`}>
             <img
               className="postProfileImage"
-              src={post.profilePicture || "/assets/persons/blank-profile-picture.webp"}
+              src={post.profilePicture || "/assets/persons/noAvatar.webp"}
               alt=""
             />
             </Link>

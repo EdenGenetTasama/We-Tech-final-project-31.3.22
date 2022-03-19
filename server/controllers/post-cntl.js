@@ -30,9 +30,8 @@ module.exports = {
         catch(err){
             res.status(500).json(err)
         }
-    }
-  ,
-  deletePost : async (req, res) => {
+    },
+    deletePost : async (req, res) => {
     try {
       const post = await posts.findById(req.params.id)
       if (post.userId === req.body.userId) {
@@ -44,8 +43,8 @@ module.exports = {
     } catch (err) {
       res.status(500).json(err)
     }
-  },
-  likePost: async (req, res) => {
+    },
+     likePost: async (req, res) => {
     try {
       const post = await posts.findById(req.params.id)
       if (!post.likes.includes(req.body.userId)) {
@@ -59,7 +58,9 @@ module.exports = {
       res.status(500).json(err)
     }
   },
-  timelinePosts: async (req, res) => {
+
+      //Get timeline post
+   timelinePosts: async (req, res) => {
     try {
       let postArray;
       const currentUser = await user.findById(req.params.userId);
@@ -76,6 +77,17 @@ module.exports = {
 
       } catch (error) {
         res.status(500).json(error)
+      }
+    },
+
+    //Get users allpost
+    usersAllPosts: async (req, res) => {
+    try {
+      const userByName = await user.findOne({userName : req.params.userName});
+      const postsByIdUser = await posts.find({userId : userByName._id}) ;
+      res.status(200).json(postsByIdUser);
+      } catch (error) {
+        res.status(400).json(error);
       }
     }
 

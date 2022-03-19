@@ -3,14 +3,24 @@ import Sidebar from "../../parts/sidebar/Sidebar";
 import Feed from "../../parts/feed/Feed";
 import Rightbar from "../../parts/rightbar/Rightbar";
 import { useParams } from "react-router-dom";
-import {users,posts} from "../../../dummyData";
+import { useState, useEffect } from "react";
+import axios from "axios";
+
 import "./profile.css";
 
 export default function Profile() {
+  const PF = "http://localhost:8800/assets/";
+  const [user, setUser] = useState({});
+  const username = useParams().username;
 
-  const {userName} = useParams();
-  const currentUser = users.filter((user)=> user.userName == userName);
-  const currentUserPost = posts.filter((user)=> currentUser[0].id ===user.userId);
+  useEffect(() => {
+    const fetchUser = async () => {
+      const res = await axios.get(`/users?username=${username}`);
+      setUser(res.data);
+    };
+    fetchUser();
+    console.log(PF);
+  }, [username]);
 
   return (
     <>
@@ -22,23 +32,31 @@ export default function Profile() {
             <div className="profileCover">
               <img
                 className="profileCoverImg"
-                src={currentUser[0].profileCoverPicture?currentUser[0].profileCoverPicture:"https://pharem-project.eu/wp-content/themes/consultix/images/no-image-found-360x250.png" }
-                alt=""
+                src={
+                  user.coverPicture
+                    ? PF + user.coverPicture
+                    : PF + "persons/noCover.png"
+                }
+                alt="Cover pic is not available"
               />
               <img
                 className="profileUserImg"
-                src={currentUser[0].profilePicture}
-                alt=""
+                src={
+                  user.profilePicture
+                    ? PF + user.profilePicture
+                    : PF + "persons/noAvatar.webp"
+                }
+                alt="Profile pic is not available"
               />
             </div>
             <div className="profileInfo">
-              <h4 className="profileInfoName">{currentUser[0].userName}</h4>
-              <span className="profileIDescription">{currentUserPost[0].desc}</span>
+              <h4 className="profileInfoName">{user.username}</h4>
+              <span className="profileIDescription">{user.desc}</span>
             </div>
           </div>
           <div className="profileRightBottom">
-            <Feed/>
-            <Rightbar profile/>
+            <Feed username={username} />
+            <Rightbar user={user} />
           </div>
         </div>
       </div>
