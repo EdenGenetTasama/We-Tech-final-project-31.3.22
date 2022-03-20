@@ -2,7 +2,7 @@ import Topbar from "../../parts/topbar/Topbar";
 import Sidebar from "../../parts/sidebar/Sidebar";
 import Feed from "../../parts/feed/Feed";
 import Rightbar from "../../parts/rightbar/Rightbar";
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -15,8 +15,9 @@ export default function Profile() {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const res = await axios.get(`/users?username=${username}`);
+      const res = await axios.get(`/users?username=Eden`);
       setUser(res.data);
+      console.log(res.data);
     };
     fetchUser();
   }, [username]);
@@ -49,7 +50,7 @@ export default function Profile() {
               />
             </div>
             <div className="profileInfo">
-              <h4 className="profileInfoName">{user.username}</h4>
+              <h4 className="profileInfoName">{user.userName}</h4>
               <span className="profileIDescription">{user.desc}</span>
             </div>
           </div>
