@@ -26,7 +26,13 @@ export default function Posts({post}) {
     }
     FetchUser();
 
+
+
   },[post.userId])
+
+
+
+
 
   
   return (
