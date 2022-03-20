@@ -19,7 +19,6 @@ export default function Profile() {
       setUser(res.data);
     };
     fetchUser();
-    console.log(PF);
   }, [username]);
 
   return (
