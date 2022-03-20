@@ -9,17 +9,22 @@ import axios from "axios";
 import "./profile.css";
 
 export default function Profile() {
+
   const [user, setUser] = useState({});
   const username = useParams().username;
   const PF = process.env.REACT_APP_PUBLIC_FOLDER ;
 
+
+
+
   useEffect(() => {
     const fetchUser = async () => {
-      const res = await axios.get(`/users?username=${username}`);
+      const res = await axios.get(PF+`users?username=Ben`);
       setUser(res.data);
+      console.log(res.data);
     };
     fetchUser();
-  }, [username]);
+  }, []);
 
   return (
     <>
@@ -33,8 +38,10 @@ export default function Profile() {
                 className="profileCoverImg"
                 src={
                   user.coverPicture
+
                     ?  user.coverPicture
                     : PF + "persons/noCover.png"
+
                 }
                 alt="Cover pic is not available"
               />
@@ -42,15 +49,15 @@ export default function Profile() {
                 className="profileUserImg"
                 src={
                   user.profilePicture
-                    ? PF + user.profilePicture
+                    ?  user.profilePicture
                     : PF + "persons/noAvatar.webp"
                 }
                 alt="Profile pic is not available"
               />
             </div>
             <div className="profileInfo">
-              <h4 className="profileInfoName">{user.username}</h4>
-              <span className="profileIDescription">{user.desc}</span>
+              <h4 className="profileInfoName">{user.userName}</h4>
+              <span className="profileIDescription">{user.userLastName}</span>
             </div>
           </div>
           <div className="profileRightBottom">
