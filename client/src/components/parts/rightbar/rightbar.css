@@ -62,3 +62,49 @@ margin-bottom: 15px;
 .rightBarUserName{
 font-weight: 500;
 }
+
+.rightBarTitleFirstPart{
+    font-size:18px;
+    font-weight: 500px;
+    margin-bottom: 10px;
+}
+
+.rigthbarFollowingIma{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;border-radius:5px;
+}
+
+.rigthBarInfo{
+    margin-bottom: 30px;
+}
+
+.rigthbarInfoItem{
+    margin-bottom: 10px;
+
+}
+
+.rigthbarInfoKey{
+    font-weight: 500px;
+    margin-bottom: 15px;
+    color: #555 ;
+}
+
+.rigthbarInfoValue{
+    font-weight: 500px;
+}
+
+.rigthbarFollowings{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 15px;
+}
+
+
+.rigthbarFollowing{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    cursor: pointer;
+}

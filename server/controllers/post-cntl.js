@@ -30,9 +30,8 @@ module.exports = {
         catch(err){
             res.status(500).json(err)
         }
-    }
-  ,
-  deletePost : async (req, res) => {
+    },
+    deletePost : async (req, res) => {
     try {
       const post = await posts.findById(req.params.id)
       if (post.userId === req.body.userId) {
@@ -44,8 +43,8 @@ module.exports = {
     } catch (err) {
       res.status(500).json(err)
     }
-  },
-  likePost: async (req, res) => {
+    },
+     likePost: async (req, res) => {
     try {
       const post = await posts.findById(req.params.id)
       if (!post.likes.includes(req.body.userId)) {
@@ -58,24 +57,42 @@ module.exports = {
     } catch (err) {
       res.status(500).json(err)
     }
-  }}
-  // timelinePosts: async (req, res) => {
-  //   try {
-  //     //currentUser
-  //     const currentUser = await user.findById(req.body.userId)
-  //     const userPost = posts.find({ userId: currentUser._id })
-  //     const friendsPost = await Promise.all(
-  //       currentUser.followings.map((friendId) => {
-  //         return posts.find({ userId: friendId })
-  //       })
-  //       );
-  //       // res.json(userPost.concat(...friendsPost))
-  //       res.json({...friendsPost})
-  //       // console.log(friendsPost);rs
-  //       // console.log(userPost);
+  },
 
-  //   } catch (error) {
-  //     res.status(500).json(error)
-  //   }
-  // }
+      //Get timeline post
+   timelinePosts: async (req, res) => {
+    try {
+      let postArray;
+      const currentUser = await user.findById(req.params.userId);
+      const userPost = await posts.find({ userId: currentUser._id });
+      // console.log(userPost);
+      const friendsPost = await Promise.all(
+        currentUser.followings.map((friendId) => {
+           return posts.find({ userId: friendId })
+          })
+          );
+
+          postArray= [...friendsPost];
+          res.status(200).json(postArray)
+
+      } catch (error) {
+        res.status(500).json(error)
+      }
+    },
+
+    //Get users allpost
+    usersAllPosts: async (req, res) => {
+    try {
+      const userByName = await user.findOne({userName : req.params.userName});
+      const postsByIdUser = await posts.find({userId : userByName._id}) ;
+      res.status(200).json({...postsByIdUser,...userByName});
+      // console.log(userByName);
+      // console.log(postsByIdUser);
+
+      } catch (error) {
+        res.status(400).json(error);
+      }
+    }
+
+}
 
