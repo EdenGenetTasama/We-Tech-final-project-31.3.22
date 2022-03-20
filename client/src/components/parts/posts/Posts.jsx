@@ -18,34 +18,22 @@ export default function Posts({post}) {
 
   // post = , אובייקט של היוזר, אובייקט של הפוסטים של היוזר, ומערך של אובייקטים של העוקבעים
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> main
-=======
-
->>>>>>> 917918020132413d9393ea9f549a07dfed90c03d
   useEffect(()=>{
     const FetchUser =async()=>{
       const respond = await axios.get(`http://localhost:8800/users/${post.userId}`);
       setUser(respond.data);
     }
     FetchUser();
-<<<<<<< HEAD
-<<<<<<< HEAD
-    // console.log(post);
-  },[post.userId])
-=======
-  },[post.userId])
 
 
->>>>>>> main
-=======
 
   },[post.userId])
 
->>>>>>> 917918020132413d9393ea9f549a07dfed90c03d
+
+
+
+
   
   return (
     <div className="postContainer">
