@@ -4,21 +4,23 @@ import Posts from "../posts/Posts";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function Feed({ userName }) {
+export default function Feed({ usernameFromUrl }) {
   const [post, setPost] = useState([]);
 
   useEffect(() => {
     const FetchPost = async () => {
-      const respond = userName
+      const respond = usernameFromUrl
         ? await axios.get(
-            "http://localhost:8800/posts/profile/"+userName
+            `http://localhost:8800/posts/profile/${usernameFromUrl}`
           )
         : await axios.get(
             "http://localhost:8800/posts/timeline/622a03595557527308d9f74d"
           );
-          setPost(...respond.data);  };
-    FetchPost();
-  }, [userName]);
+          setPost(...respond.data);  
+        };
+        FetchPost();
+
+  }, [usernameFromUrl]);
 
 
   return (
