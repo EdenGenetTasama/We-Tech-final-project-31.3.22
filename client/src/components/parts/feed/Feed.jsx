@@ -14,7 +14,7 @@ export default function Feed({ userName }) {
             "http://localhost:8800/posts/profile/"+userName
           )
         : await axios.get(
-            "http://localhost:8800/posts/timeline/622b2255aa086d5555abea6a"
+            "http://localhost:8800/posts/timeline/622a03595557527308d9f74d"
           );
           setPost(...respond.data);  };
     FetchPost();
