@@ -25,8 +25,8 @@ export default function Posts({post}) {
       setUser(respond.data);
     }
     FetchUser();
-  },[post.userId])
 
+  },[post.userId])
 
   
   return (

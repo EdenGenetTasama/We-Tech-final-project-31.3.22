@@ -9,11 +9,13 @@ import axios from "axios";
 import "./profile.css";
 
 export default function Profile() {
-  const PF = "http://localhost:8800/"
 
-  
   const [user, setUser] = useState({});
-  const username = useParams();
+  const username = useParams().username;
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER ;
+
+
+
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -36,8 +38,10 @@ export default function Profile() {
                 className="profileCoverImg"
                 src={
                   user.coverPicture
-                    ? user.coverPicture
-                    : "/public/assets/persons/noCover.png"
+
+                    ?  user.coverPicture
+                    : PF + "persons/noCover.png"
+
                 }
                 alt="Cover pic is not available"
               />
