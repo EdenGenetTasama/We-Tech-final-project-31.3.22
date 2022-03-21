@@ -23,6 +23,7 @@ export default function Posts({post}) {
     const FetchUser =async()=>{
       const respond = await axios.get(`http://localhost:8800/users/${post.userId}`);
       setUser(respond.data);
+      console.log(respond.data)
     }
     FetchUser();
   },[post.userId])
