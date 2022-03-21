@@ -35,7 +35,7 @@ export default function Posts({post}) {
             <Link to={`/profile/${user.userName}`}>
             <img
               className="postProfileImage"
-              src={post.profilePicture || "/assets/persons/noAvatar.webp"}
+              src={user.profilePicture || "/assets/persons/noAvatar.webp"}
               alt=""
             />
             </Link>
