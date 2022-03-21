@@ -25,16 +25,8 @@ export default function Posts({post}) {
       setUser(respond.data);
     }
     FetchUser();
-
-
-
   },[post.userId])
 
-
-
-
-
-  
   return (
     <div className="postContainer">
       <div className="postWrapper">
@@ -71,7 +63,7 @@ export default function Posts({post}) {
 
 
           <div className="postBottomRight">
-              <span className="postCommentText">{post.comment} comments</span>
+              <span className="postCommentText">{post.comment?post.comment: "0"} comments</span>
           </div>
         </div>
       </div>

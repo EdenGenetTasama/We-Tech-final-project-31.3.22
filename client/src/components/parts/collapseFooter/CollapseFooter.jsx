@@ -5,11 +5,11 @@ export default function CollapseFooter() {
   var i;
   return (
     <div className="collapse">
-      <div class="footer">
+      <div className="footer">
         <div id="button"></div>
         <div id="container">
           <div id="cont">
-            <div class="footer_center">
+            <div className="footer_center">
               <h3>Classy footer text</h3>
             </div>
           </div>

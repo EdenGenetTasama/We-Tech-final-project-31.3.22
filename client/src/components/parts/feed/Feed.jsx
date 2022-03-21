@@ -4,14 +4,14 @@ import Posts from "../posts/Posts";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function Feed({ usernameFromUrl }) {
+export default function Feed({ username }) {
   const [post, setPost] = useState([]);
 
   useEffect(() => {
     const FetchPost = async () => {
-      const respond = usernameFromUrl
+      const respond = username
         ? await axios.get(
-            `http://localhost:8800/posts/profile/${usernameFromUrl}`
+            `http://localhost:8800/posts/profile/${username}`
           )
         : await axios.get(
             "http://localhost:8800/posts/timeline/622a03595557527308d9f74d"
@@ -20,7 +20,7 @@ export default function Feed({ usernameFromUrl }) {
         };
         FetchPost();
 
-  }, [usernameFromUrl]);
+  }, [username]);
 
 
   return (

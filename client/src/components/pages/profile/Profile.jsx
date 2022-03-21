@@ -12,14 +12,14 @@ export default function Profile() {
 
   const [user, setUser] = useState({});
   const username = useParams().username;
-  const PF = process.env.REACT_APP_PUBLIC_FOLDER ;
+  const PF = `http://localhost:8800` ;
 
 
 
 
   useEffect(() => {
     const fetchUser = async () => {
-      const res = await axios.get(PF+`users?username=Ben`);
+      const res = await axios.get(PF+`/users/622b2255aa086d5555abea6a`);
       setUser(res.data);
       console.log(res.data);
     };
@@ -40,7 +40,7 @@ export default function Profile() {
                   user.coverPicture
 
                     ?  user.coverPicture
-                    : PF + "persons/noCover.png"
+                    : "https://upload.wikimedia.org/wikipedia/commons/b/b9/No_Cover.jpg"
 
                 }
                 alt="Cover pic is not available"
@@ -50,7 +50,7 @@ export default function Profile() {
                 src={
                   user.profilePicture
                     ?  user.profilePicture
-                    : PF + "persons/noAvatar.webp"
+                    : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
                 }
                 alt="Profile pic is not available"
               />
