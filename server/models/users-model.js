@@ -13,13 +13,13 @@ const UserSchema = new mongoose.Schema({
     },
     userLastName:{
         type:String,
-        required:true,
+        // required:true,
         min:3,
         max:20
     },
     birthDate:{
         type:Date,
-        required:true,
+        // required:true,
         default:new Date(),
     },
     email:{
@@ -34,19 +34,13 @@ const UserSchema = new mongoose.Schema({
         min:6
     },
     city:{
-        type:String,
-        required:true,
-        min:6
+        type:String
     },
     from:{
-        type:String,
-        required:true,
-        min:6
+        type:String
     },
     relationship:{
-        type:String,
-        required:true,
-        min:6
+        type:String
     },
     profilePicture:{
         type:String,
