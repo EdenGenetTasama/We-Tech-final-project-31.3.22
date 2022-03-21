@@ -28,6 +28,11 @@ export default function Login() {
     //   setUser(decoded)
     // });
   };
+  const reDirectToRegister=(e)=>{
+    e.preventDefault();
+    navigate("/register");
+
+  }
   return (
     <div className="login">
       <div className="loginWrapper">
@@ -64,7 +69,7 @@ export default function Login() {
               )}
             </button>
             <span className="loginForgot">forgot Password?</span>
-            <button className="loginRegisterButton">
+            <button className="loginRegisterButton" onClick={reDirectToRegister}>
               Create a New Account
             </button>
           </form>
