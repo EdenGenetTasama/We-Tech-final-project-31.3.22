@@ -19,8 +19,8 @@ export default function Feed({ username }) {
           setPost(...respond.data);  
         };
         FetchPost();
-
   }, [username]);
+
 
 
   return (
