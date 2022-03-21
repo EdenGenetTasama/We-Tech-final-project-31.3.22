@@ -70,7 +70,7 @@ module.exports = {
     } else {
       res.status(403).json('you cant follow yourself')
     }
-  },
+  }
   unFollowUser: async (req, res) => {
     if (req.body.userId !== req.params.id) {
       try {
@@ -86,8 +86,23 @@ module.exports = {
       } catch (err) {
         res.status(500).json(err)
       }
-    } else {
-      res.status(403).json('you cant unfollow yourself')
+
+  },
+  getUser: async (req,res) =>{
+    const userId= req.query.userId;
+    const userName= req.query.userName;
+    try{
+      const user = userId?
+      await users.findById(userId)
+      : await users.findOne({userName:userName});
+      const {password,updateAt,...other} = user._doc;
+      res.status(200).json(other);
     }
+    catch(err){
+      res.status(500).json(err);
+
+    } 
+
   }
+}
 }
