@@ -19,7 +19,7 @@ export default function Feed({ usernameFromUrl }) {
           setPost(...respond.data);  
         };
         FetchPost();
-
+        
   }, [usernameFromUrl]);
 
 

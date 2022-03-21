@@ -101,7 +101,7 @@ module.exports = {
     } else {
       res.status(403).json({ message: 'You cant follow yourself' })
     }
-  },
+  }
   unFollowUser: async (req, res) => {
     if (req.body.userId !== req.params.id) {
       try {
@@ -132,9 +132,7 @@ module.exports = {
     catch(err){
       res.status(500).json(err);
 
-    } else {
-      res.status(403).json({ message: 'You cant unfollow yourself' })
-
-    }
+    } 
   }
+}
 }
