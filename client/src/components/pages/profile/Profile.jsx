@@ -2,6 +2,7 @@ import Topbar from "../../parts/topbar/Topbar";
 import Sidebar from "../../parts/sidebar/Sidebar";
 import Feed from "../../parts/feed/Feed";
 import Rightbar from "../../parts/rightbar/Rightbar";
+import CollapseFooter from "../../parts/collapseFooter/CollapseFooter"
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -11,19 +12,17 @@ import "./profile.css";
 export default function Profile() {
 
   const [user, setUser] = useState({});
-  const username = useParams().username;
   const PF = `http://localhost:8800` ;
-
-
+  const userName = useParams().userName;
 
 
   useEffect(() => {
     const fetchUser = async () => {
-      const res = await axios.get(PF+`/users/?username=Amir`);
+      const res = await axios.get(PF+`/users/?username=${userName}`);
       setUser(res.data);
     };
     fetchUser();
-  }, []);
+  }, [userName]);
 
   return (
     <>
@@ -55,16 +54,17 @@ export default function Profile() {
               />
             </div>
             <div className="profileInfo">
-              <h4 className="profileInfoName">{user.userName}</h4>
-              <span className="profileIDescription">{user.userLastName}</span>
+              <h4 className="profileInfoName">{user.userName+" "+user.userLastName}</h4>
+              <span className="profileIDescription">{user.dec?user.dec:" "}</span>
             </div>
           </div>
           <div className="profileRightBottom">
-            <Feed username={username} />
+            <Feed username={userName} />
             <Rightbar user={user} />
           </div>
         </div>
       </div>
+      <CollapseFooter/>
     </>
   );
 }

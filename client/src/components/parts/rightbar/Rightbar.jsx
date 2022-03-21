@@ -39,7 +39,7 @@ export default function Rightbar({ user }) {
 
       <div className="rigthbarInfoItem">
         <span className="rigthbarInfoKey">Relationship: </span>
-        <span className="rigthbarInfoValue"> {user.relationship}</span>
+        <span className="rigthbarInfoValue"> {user.relationship === 1 ? "Single" :user.relationship === 2 ? "Married" : "-"}</span>
       </div>
 
       <h4 className="rightBarTitleFirstPart">User Friend's</h4>

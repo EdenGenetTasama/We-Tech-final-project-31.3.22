@@ -17,13 +17,12 @@ export default function Posts({post}) {
   }
 
   // post = , אובייקט של היוזר, אובייקט של הפוסטים של היוזר, ומערך של אובייקטים של העוקבעים
-
-
+  
   useEffect(()=>{
     const FetchUser =async()=>{
-      const respond = await axios.get(`http://localhost:8800/users/${post.userId}`);
+      const respond = await axios.get(`http://localhost:8800/users/?userId=${post.userId}`);
       setUser(respond.data);
-      console.log(respond.data)
+      console.log(post)
     }
     FetchUser();
   },[post.userId])

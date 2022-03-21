@@ -9,13 +9,10 @@ module.exports = {
       console.log(usernameQ)
     try {
       const user = userIdQ
-        ? await User.findById(req.query.userId)
-        : await User.findOne({ username: usernameQ })
+        ? await User.findById(userIdQ)
+        : await User.findOne({ userName: usernameQ })
       const { password, updatedAt, ...other } = user._doc
       res.status(200).json(other);
-      console.log(userIdQ);
-      console.log(usernameQ);
-
     } catch (err) {
       res.status(500).json(err)
     }
@@ -95,22 +92,7 @@ module.exports = {
         res.status(500).json(err)
       }
     }
-  },
-  getUser: async (req,res) =>{
-    const userId= req.query.userId;
-    const userName= req.query.userName;
-    try{
-      const user = userId?
-      await users.findById(userId)
-      : await users.findOne({userName:userName});
-      const {password,updateAt,...other} = user._doc;
-      res.status(200).json(other);
-    }
-    catch(err){
-      res.status(500).json(err);
-
-    } 
-
+  
   }
 }
 

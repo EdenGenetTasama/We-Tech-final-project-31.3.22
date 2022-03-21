@@ -7,6 +7,10 @@ const UserSchema = new mongoose.Schema({
         min:3,
         max:20
     },
+    dec:{
+        type:String,
+        required:false,
+    },
     userLastName:{
         type:String,
         required:true,
