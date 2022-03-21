@@ -2,7 +2,7 @@ import Topbar from "../../parts/topbar/Topbar";
 import Sidebar from "../../parts/sidebar/Sidebar";
 import Feed from "../../parts/feed/Feed";
 import Rightbar from "../../parts/rightbar/Rightbar";
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
