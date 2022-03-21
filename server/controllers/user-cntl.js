@@ -70,7 +70,7 @@ module.exports = {
     } else {
       res.status(403).json('you cant follow yourself')
     }
-  }
+  },
   unFollowUser: async (req, res) => {
     if (req.body.userId !== req.params.id) {
       try {
@@ -86,7 +86,7 @@ module.exports = {
       } catch (err) {
         res.status(500).json(err)
       }
-
+    }
   },
   getUser: async (req,res) =>{
     const userId= req.query.userId;
@@ -105,4 +105,4 @@ module.exports = {
 
   }
 }
-}
+
