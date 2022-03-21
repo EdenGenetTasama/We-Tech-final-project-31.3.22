@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 export default function Login() {
   const email = useRef();
   const password = useRef();
-  const { user, isFetching, error, dispatch, setUser } = useContext(AuthContext);
+  const { user, isFetching, error, dispatch } = useContext(AuthContext);
   const navigate = useNavigate();
 
 

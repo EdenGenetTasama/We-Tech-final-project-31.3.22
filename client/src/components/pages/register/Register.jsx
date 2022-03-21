@@ -15,7 +15,7 @@ export default function Register() {
   const confirmPassword = useRef();
   const navigate = useNavigate();
 
-  const HandleClick = (e) => {
+  const HandleClick =async (e) => {
     e.preventDefault();
     if (confirmPassword.current.value !== password.current.value) {
       confirmPassword.current.setCustomValidity("Password dont match!");
@@ -31,7 +31,7 @@ export default function Register() {
         from: from.current.value,
       };
       try {
-        const res = axios.post("http://localhost:8800/auth/register", user);
+       await axios.post("http://localhost:8800/auth/register", user);
         console.log(user);
         navigate("/login");
       } catch (error) {
