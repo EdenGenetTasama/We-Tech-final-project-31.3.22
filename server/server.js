@@ -16,8 +16,8 @@ app.use('/users',usersRouter)
 app.use('/posts',postsRouter)
 
 
-app.use('/',(req,res)=>{
-    res.send("first page")
-})
+// app.use('/',(req,res)=>{
+//     res.send("first page")
+// })
 
 app.listen(process.env.PORT);
