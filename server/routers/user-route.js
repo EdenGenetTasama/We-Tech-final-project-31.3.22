@@ -6,7 +6,7 @@ usersRouter.put('/:id',userCtrl.updateUser);
 usersRouter.delete('/:id',userCtrl.deleteUser);
 usersRouter.put('/:id/follow',userCtrl.followUser);
 usersRouter.put('/:id/unfollow',userCtrl.unFollowUser);
-usersRouter.put('/',userCtrl.getUser);
+// usersRouter.put('/',userCtrl.getUser);
 
 
 
