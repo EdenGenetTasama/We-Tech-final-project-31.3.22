@@ -3,20 +3,28 @@ const bcrypt = require('bcryptjs')
 
 module.exports = {
   getUsers: async (req, res) => {
-    const userIdQ = req.query.userId;
-    const usernameQ = req.query.username;
+    const userIdQ = req.query.userId
+    const usernameQ = req.query.username
+    console.log(userIdQ);
+      console.log(usernameQ)
     try {
       const user = userIdQ
-        ? await User.findById(req.query.id)
-        : await User.findOne({ username: usernameQ });
-      const { password, updatedAt, ...other } = user._doc;
+        ? await User.findById(req.query.userId)
+        : await User.findOne({ username: usernameQ })
+      const { password, updatedAt, ...other } = user._doc
       res.status(200).json(other);
       console.log(userIdQ);
       console.log(usernameQ);
 
     } catch (err) {
-      res.status(500).json(err);
+      res.status(500).json(err)
     }
+  },
+  getUserById: async (req, res) => {
+    await User
+      .findById(req.params.id)
+      .then(user => res.status(200).json(user))
+      .catch(err => res.status(500).json(err))
   },
   updateUser: async (req, res) => {
     if (req.body.userId === req.params.id || req.body.isAdmin) {
@@ -87,7 +95,9 @@ module.exports = {
         res.status(500).json(err)
       }
 
-  }},
+    }
+  },
+
   getUser: async (req,res) =>{
     const userId= req.query.userId;
     const userName= req.query.userName;
@@ -106,3 +116,5 @@ module.exports = {
   }
 
 }
+
+

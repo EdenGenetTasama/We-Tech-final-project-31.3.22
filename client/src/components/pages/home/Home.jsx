@@ -2,6 +2,7 @@ import Topbar from "../../parts/topbar/Topbar";
 import Sidebar from '../../parts/sidebar/Sidebar';
 import Feed from '../../parts/feed/Feed';
 import Rightbar from '../../parts/rightbar/Rightbar';
+import CollapseFooter from "../../parts/collapseFooter/CollapseFooter";
 import './home.css';
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
           <Feed/>
           <Rightbar/>
         </div>
+        <CollapseFooter/>
     </>
   )
 }

@@ -29,17 +29,17 @@ export default function Rightbar({ user }) {
     <div className="rigthBarInfo">
       <div className="rigthbarInfoItem">
         <span className="rigthbarInfoKey">City: </span>
-        <span className="rigthbarInfoValue">New York</span>
+        <span className="rigthbarInfoValue"> {user.city}</span>
       </div>
 
       <div className="rigthbarInfoItem">
         <span className="rigthbarInfoKey">From: </span>
-        <span className="rigthbarInfoValue">Israel</span>
+        <span className="rigthbarInfoValue"> {user.from}</span>
       </div>
 
       <div className="rigthbarInfoItem">
         <span className="rigthbarInfoKey">Relationship: </span>
-        <span className="rigthbarInfoValue">Single</span>
+        <span className="rigthbarInfoValue"> {user.relationship}</span>
       </div>
 
       <h4 className="rightBarTitleFirstPart">User Friend's</h4>
