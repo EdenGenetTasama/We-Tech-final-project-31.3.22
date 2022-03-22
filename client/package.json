@@ -11,6 +11,7 @@
     "axios": "^0.26.1",
     "dotenv": "^16.0.0",
     "fs": "^0.0.1-security",
+    "jwt-decode": "^3.1.2",
     "os": "^0.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -54,7 +55,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-
   },
   "proxy": "http://localhost:8800/server"
 }
