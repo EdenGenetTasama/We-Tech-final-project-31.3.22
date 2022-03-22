@@ -7,7 +7,7 @@ import jwt_decoded from "jwt-decode";
 
 export default function Topbar() {
   const { user } = useContext(AuthContext);
-  let decoded = jwt_decoded(user.token)
+  // let decoded = jwt_decoded(user.token)
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   return (
     <div className="topBarContainer">
@@ -48,9 +48,9 @@ export default function Topbar() {
             <span className="topbarIconBadge">3</span>
           </div>
         </div>
-        <Link to={`profile/${decoded._doc.userName}`}>
+        <Link to={`profile/${user.userName}`}>
         <img
-          src={decoded._doc.profilePicture ? decoded._doc.profilePicture : PF + "persons/noAvatar.webp"}
+          src={user.profilePicture ? user.profilePicture : PF + "persons/noAvatar.webp"}
           alt="profileImage"
           className="topbarImage"
           />

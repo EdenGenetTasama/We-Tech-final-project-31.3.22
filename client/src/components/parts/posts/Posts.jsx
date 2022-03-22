@@ -1,9 +1,11 @@
 import "./posts.css";
 import { MoreVert,Favorite,ThumbUp } from "@material-ui/icons";
-import { useState,useEffect } from "react";
+import { useState,useEffect,useContext } from "react";
 import {Link} from "react-router-dom";
 import {format} from 'timeago.js';
 import axios from "axios";
+import { AuthContext } from "../../../Context/AuthContext";
+
 
 export default function Posts({post}) {
 
@@ -11,13 +13,13 @@ export default function Posts({post}) {
   const [isLiked,setIsLiked] =useState(false) ;
   const [user,setUser] =useState({}) ;
   const PF = process.env.REACT_APP_PUBLIC_FOLDER ;
-  const likeHandler = ()=>{
-    setLike(isLiked?like - 1 : like + 1)
-    setIsLiked(!isLiked)
-  }
-
-  // post = , אובייקט של היוזר, אובייקט של הפוסטים של היוזר, ומערך של אובייקטים של העוקבעים
+  const {user:currentUser} = useContext(AuthContext);
   
+  useEffect(()=>{
+    setIsLiked(post.likes.includes(currentUser._id))
+  },[currentUser._id, post.likes])
+  
+  // post = , אובייקט של היוזר, אובייקט של הפוסטים של היוזר, ומערך של אובייקטים של העוקבעים
   useEffect(()=>{
     const FetchUser =async()=>{
       const respond = await axios.get(`http://localhost:8800/users/?userId=${post.userId}`);
@@ -27,6 +29,22 @@ export default function Posts({post}) {
     FetchUser();
   },[post.userId])
 
+
+  const likeHandler = ()=>{
+    try{
+      axios.put("http://localhost:8800/posts/"+post._id+"/like" , {userId : currentUser._id})
+    }
+    catch(err){
+
+    }
+    
+
+    setLike(isLiked?like - 1 : like + 1)
+    setIsLiked(!isLiked)
+  }
+
+
+
   return (
     <div className="postContainer">
       <div className="postWrapper">
@@ -35,7 +53,7 @@ export default function Posts({post}) {
             <Link to={`/profile/${user.userName}`}>
             <img
               className="postProfileImage"
-              src={user.profilePicture ? PF+user.profilePicture : PF+"persons/noAvatar.webp"}
+              src={user.profilePicture ? user.profilePicture : PF+"persons/noAvatar.webp"}
               alt=""
             />
             </Link>

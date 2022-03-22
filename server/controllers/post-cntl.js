@@ -45,24 +45,24 @@ module.exports = {
     }
     },
      likePost: async (req, res) => {
-    try {
-      const post = await posts.findById(req.params.id)
-      if (!post.likes.includes(req.body.userId)) {
-        await post.updateOne({ $push: { likes: req.body.userId } })
-        res.status(200).json({ message: 'Post has been liked' })
-      } else {
-        await post.updateOne({ $pull: { likes: req.body.userId } })
-        res.status(200).json({ message: 'Post has been disliked' })
+      try {
+        const Post = await posts.findById(req.params.id);
+        if (!Post.likes.includes(req.body.userId)) {
+          await Post.updateOne({ $push: { likes: req.body.userId } });
+          res.status(200).json("The post has been liked");
+        } else {
+          await Post.updateOne({ $pull: { likes: req.body.userId } });
+          res.status(200).json("The post has been disliked");
+        }
+      } catch (err) {
+        res.status(500).json(err);
       }
-    } catch (err) {
-      res.status(500).json(err)
-    }
   },
 
       //Get timeline post
    timelinePosts: async (req, res) => {
     try {
-      let postArray;
+      // let postArray;
       const currentUser = await user.findById(req.params.userId);
       const userPost = await posts.find({ userId: currentUser._id });
       // console.log(userPost);
@@ -71,10 +71,9 @@ module.exports = {
           return posts.find({ userId: friendId })
         })
         );
-        
-        postArray= [userPost,...friendsPost];
-        res.status(200).json(postArray)
-
+        // postArray= [...userPost,...friendsPost];
+        // res.status(200).json(postArray)
+        res.status(200).json(userPost.concat(...friendsPost));
       } catch (error) {
         res.status(500).json(error)
       }
@@ -86,8 +85,8 @@ module.exports = {
       const userByName = await user.findOne({userName : req.params.userName});
       const postsByIdUser = await posts.find({userId : userByName._id}) ;
       res.status(200).json({postsByIdUser: [...postsByIdUser],...userByName});
-      console.log(userByName);
-      console.log(postsByIdUser);
+      // console.log(userByName);
+      // console.log(postsByIdUser);
 
       } catch (error) {
         res.status(400).json(error);
