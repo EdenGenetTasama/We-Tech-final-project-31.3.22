@@ -1,24 +1,31 @@
 import "./feed.css";
 import Share from "../share/Share";
 import Posts from "../posts/Posts";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import {AuthContext} from "../../../Context/AuthContext"
 import axios from "axios";
+import jwt_decoded from "jwt-decode";
+
 
 export default function Feed({ username }) {
   const [post, setPost] = useState([]);
+  const { user } = useContext(AuthContext);
+  let decoded = jwt_decoded(user.token)
+  // console.log(decoded._doc);
 
   useEffect(() => {
     const FetchPost = async () => {
       const respond = username
         ? await axios.get(`http://localhost:8800/posts/profile/${username}`)
         : await axios.get(
-            "http://localhost:8800/posts/timeline/622a03595557527308d9f74d"
+            "http://localhost:8800/posts/timeline/" + decoded._doc._id
           );
-      setPost([...respond.data[0]]);
-    };
-    FetchPost();
-  }, [username]);
-  
+          setPost([...respond.data.postsByIdUser]);
+        };
+        FetchPost();
+      }, [username,decoded._doc._id]);
+      
+      console.log(respond.data.postsByIdUser);
   return (
     <div className="feed">
       <div className="feedWrapper">

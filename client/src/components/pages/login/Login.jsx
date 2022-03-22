@@ -10,14 +10,14 @@ import { useNavigate } from 'react-router-dom';
 export default function Login() {
   const email = useRef();
   const password = useRef();
-  const { user, isFetching, error, dispatch, setUser } = useContext(AuthContext);
+  const { user, isFetching, error, dispatch } = useContext(AuthContext);
   const navigate = useNavigate();
 
 
   const HandleClick = (e) => {
     e.preventDefault();
     loginCall(
-      { email: email.current.value, password: password.current.value },
+      {  email: email.current.value, password: password.current.value },
       dispatch
     )
     navigate("/");

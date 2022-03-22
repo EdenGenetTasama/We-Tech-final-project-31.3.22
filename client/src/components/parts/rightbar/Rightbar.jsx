@@ -28,18 +28,19 @@ export default function Rightbar({ user }) {
     <h4 className="rightBarTitleFirstPart">User information</h4>
     <div className="rigthBarInfo">
       <div className="rigthbarInfoItem">
+      <div className="rigthbarInfoItem">
+        <span className="rigthbarInfoKey">Country: </span>
+        <span className="rigthbarInfoValue"> {user.from}</span>
+      </div>
+
         <span className="rigthbarInfoKey">City: </span>
         <span className="rigthbarInfoValue"> {user.city}</span>
       </div>
 
-      <div className="rigthbarInfoItem">
-        <span className="rigthbarInfoKey">From: </span>
-        <span className="rigthbarInfoValue"> {user.from}</span>
-      </div>
 
       <div className="rigthbarInfoItem">
         <span className="rigthbarInfoKey">Relationship: </span>
-        <span className="rigthbarInfoValue"> {user.relationship === 1 ? "Single" :user.relationship === 2 ? "Married" : "-"}</span>
+        <span className="rigthbarInfoValue"> {user.relationship === 1 ? "Single" :user.relationship === 2 ? "Married" : "It's private ☺"}</span>
       </div>
 
       <h4 className="rightBarTitleFirstPart">User Friend's</h4>
