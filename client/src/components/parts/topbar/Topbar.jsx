@@ -3,10 +3,11 @@ import { Person, Search, Chat, Notifications } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../../Context/AuthContext";
+import jwt_decoded from "jwt-decode";
 
 export default function Topbar() {
   const { user } = useContext(AuthContext);
-  console.log(user);
+  let decoded = jwt_decoded(user.token)
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   return (
     <div className="topBarContainer">
@@ -47,9 +48,9 @@ export default function Topbar() {
             <span className="topbarIconBadge">3</span>
           </div>
         </div>
-        <Link to={`profile/${user.userName}`}>
+        <Link to={`profile/${decoded._doc.userName}`}>
         <img
-          src={user.profilePicture ? user.profilePicture : PF + "persons/noAvatar.webp"}
+          src={decoded._doc.profilePicture ? decoded._doc.profilePicture : PF + "persons/noAvatar.webp"}
           alt="profileImage"
           className="topbarImage"
           />

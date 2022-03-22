@@ -5,8 +5,7 @@ module.exports = {
   getUsers: async (req, res) => {
     const userIdQ = req.query.userId
     const usernameQ = req.query.username
-    console.log(userIdQ);
-      console.log(usernameQ)
+
     try {
       const user = userIdQ
         ? await User.findById(userIdQ)

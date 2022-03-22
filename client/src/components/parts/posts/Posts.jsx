@@ -10,7 +10,7 @@ export default function Posts({post}) {
   const [like,setLike] = useState(post.likes.length);
   const [isLiked,setIsLiked] =useState(false) ;
   const [user,setUser] =useState({}) ;
-
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER ;
   const likeHandler = ()=>{
     setLike(isLiked?like - 1 : like + 1)
     setIsLiked(!isLiked)
@@ -22,7 +22,7 @@ export default function Posts({post}) {
     const FetchUser =async()=>{
       const respond = await axios.get(`http://localhost:8800/users/?userId=${post.userId}`);
       setUser(respond.data);
-      console.log(post)
+      // console.log(post)
     }
     FetchUser();
   },[post.userId])
@@ -35,7 +35,7 @@ export default function Posts({post}) {
             <Link to={`/profile/${user.userName}`}>
             <img
               className="postProfileImage"
-              src={user.profilePicture || "/assets/persons/noAvatar.webp"}
+              src={user.profilePicture ? PF+user.profilePicture : PF+"persons/noAvatar.webp"}
               alt=""
             />
             </Link>
