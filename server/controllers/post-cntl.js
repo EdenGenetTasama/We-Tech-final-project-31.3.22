@@ -68,12 +68,12 @@ module.exports = {
       // console.log(userPost);
       const friendsPost = await Promise.all(
         currentUser.followings.map((friendId) => {
-           return posts.find({ userId: friendId })
-          })
-          );
-
-          postArray= [...friendsPost];
-          res.status(200).json(postArray)
+          return posts.find({ userId: friendId })
+        })
+        );
+        
+        postArray= [userPost,...friendsPost];
+        res.status(200).json(postArray)
 
       } catch (error) {
         res.status(500).json(error)
