@@ -12,7 +12,6 @@ import "./profile.css";
 export default function Profile() {
 
   const [user, setUser] = useState({});
-  const [post, setPost] = useState({});
 
   const PF = `http://localhost:8800` ;
   const userName = useParams().userName;
@@ -22,12 +21,10 @@ export default function Profile() {
     const fetchUser = async () => {
       const res = await axios.get(PF+`/users/?username=${userName}`);
       setUser(res.data);
-      setPost(res.data);
     };
     fetchUser();
   }, [userName]);
   
-  console.log(post);
   return (
     <>
       <Topbar />
