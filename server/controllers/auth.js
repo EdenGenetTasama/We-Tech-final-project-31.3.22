@@ -21,7 +21,7 @@ module.exports = {
             if (err) return res.status(400).send({message:"err try again"})
             if(!isMatch) return res.status(403).send({message:"Invalid credentials"})
             jwt.sign({...userItem},process.env.SECRET_KEY,{expiresIn:"30m"},(err,token)=>{
-                if(err) return res.status(400).send({message:"Error logging in user"})
+                if(err) return res.status(400).send({message: "Error logging in user"})
                 res.status(200).send({message:"logged in successfully",token});
             })
         }) )

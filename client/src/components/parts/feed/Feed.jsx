@@ -25,7 +25,6 @@ export default function Feed({ username }) {
         FetchPost();
       }, [username,decoded._doc._id]);
       
-      console.log(respond.data.postsByIdUser);
   return (
     <div className="feed">
       <div className="feedWrapper">
