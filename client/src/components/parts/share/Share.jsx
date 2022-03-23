@@ -14,10 +14,12 @@ export default function Share() {
     const newPost = {
       userId: user._id,
       desc: desc.current.value,
-    };
+    };   
+       console.log(file)
+
     if (file) {
       const data = new FormData();
-      const fileName = Date.now() + file.name;
+      const fileName =file.name;
       data.append("file", file);
       data.append("name", fileName);
       newPost.img = fileName;
@@ -45,7 +47,7 @@ export default function Share() {
             src={
               user.profilePicture
                 ? user.profilePicture
-                : PF + "persons/noAvatar.webp"
+                : PF + "/persons/noAvatar.webp"
             }
             alt=""
           />

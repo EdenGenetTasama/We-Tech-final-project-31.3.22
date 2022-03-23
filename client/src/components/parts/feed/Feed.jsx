@@ -4,7 +4,6 @@ import Posts from "../posts/Posts";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Context/AuthContext";
 import axios from "axios";
-import jwt_decoded from "jwt-decode";
 
 export default function Feed({ userName }) {
   const [post, setPost] = useState([]);
@@ -24,10 +23,11 @@ export default function Feed({ userName }) {
     FetchPost();
   }, [userName, user._id]);
 
+  console.log(post);
+
   return (
     <div className="feed">
       <div className="feedWrapper">
-        
         {(!userName || userName===user.userName)&&<Share />}
         {post.length >= 1
           ? post.map((p) => <Posts key={p._id} post={p} />)
