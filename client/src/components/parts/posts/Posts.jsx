@@ -53,7 +53,7 @@ export default function Posts({post}) {
             <Link to={`/profile/${user.userName}`}>
             <img
               className="postProfileImage"
-              src={user.profilePicture ? user.profilePicture : PF+"persons/noAvatar.webp"}
+              src={user.profilePicture ? user.profilePicture : PF+"/persons/noAvatar.webp"}
               alt=""
             />
             </Link>
@@ -68,7 +68,7 @@ export default function Posts({post}) {
 
         <div className="postCenter">
           <span className="postText">{post?.desc}</span>
-          <img className="postImage" src={post.img} alt="" />
+          <img className="postImage" src={PF+"/"+post.img} alt="" />
         </div>
 
         <div className="postBottom">
