@@ -56,6 +56,21 @@ module.exports = {
       return res.status(403).json('You can delete only your account!')
     }
   },
+  //get friends
+  getFriends:async (req,res)=>{
+     const theUser = await User.findById(req.params.userId);
+     const userFriends=await Promise.all(
+       theUser.followings.map(friendId=>{
+         return User.findById(friendId)
+       })
+     )
+     let friendsList = [];
+     userFriends.map(friend=>{
+       const {_id,userName,userLastName,profilePicture }= friend;
+       friendsList.push({_id,userName,userLastName,profilePicture });
+     });
+     res.status(200).json(friendsList)
+  },
   followUser: async (req, res) => {
     if (req.body.userId !== req.params.id) {
       try {
