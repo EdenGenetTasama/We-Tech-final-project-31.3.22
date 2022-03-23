@@ -12,7 +12,6 @@ import "./profile.css";
 export default function Profile() {
 
   const [user, setUser] = useState({});
-
   const PF = `http://localhost:8800` ;
   const userName = useParams().userName;
 
@@ -24,7 +23,7 @@ export default function Profile() {
     };
     fetchUser();
   }, [userName]);
-  
+
   return (
     <>
       <Topbar />
