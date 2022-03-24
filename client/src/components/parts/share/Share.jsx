@@ -38,7 +38,6 @@ export default function Share() {
     }
   };
 
-console.log(user)
   return (
     <div className="share-container">
       <div className="shareWrapper">
@@ -59,7 +58,6 @@ console.log(user)
             ref={desc}
           />
         </div>
-        <hr className="shareHR" />
         <form className="shareButton" onSubmit={submitHandler}>
           <div className="shareOptions">
             <label htmlFor="file" className="shareOption">

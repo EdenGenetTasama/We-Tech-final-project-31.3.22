@@ -3,9 +3,7 @@ import "./Login.css";
 import { loginCall } from "../../../apiCalls";
 import { AuthContext } from "../../../Context/AuthContext";
 import { CircularProgress } from "@material-ui/core";
-import jwt_decode from 'jwt-decode' ;
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const email = useRef();
@@ -13,26 +11,17 @@ export default function Login() {
   const { user, isFetching, error, dispatch } = useContext(AuthContext);
   const navigate = useNavigate();
 
-
   const HandleClick = (e) => {
     e.preventDefault();
     loginCall(
-      {email: email.current.value, password: password.current.value },
+      { email: email.current.value, password: password.current.value },
       dispatch
     )
-    navigate("/");
-    // .then((res) => {
-    //   localStorage.setItem("token", res.token);
-    //   const token = localStorage.getItem("token");
-    //   const decoded = jwt_decode(token);
-    //   setUser(decoded)
-    // });
   };
-  const reDirectToRegister=(e)=>{
+  const reDirectToRegister = (e) => {
     e.preventDefault();
     navigate("/register");
-
-  }
+  };
   return (
     <div className="login">
       <div className="loginWrapper">
@@ -69,7 +58,10 @@ export default function Login() {
               )}
             </button>
             <span className="loginForgot">forgot Password?</span>
-            <button className="loginRegisterButton" onClick={reDirectToRegister}>
+            <button
+              className="loginRegisterButton"
+              onClick={reDirectToRegister}
+            >
               Create a New Account
             </button>
           </form>

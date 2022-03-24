@@ -1,9 +1,12 @@
 import "./sidebar.css";
 import { RssFeed, Event, VideoCall, Person } from "@material-ui/icons";
-import { users } from "../../../dummyData";
+// import { user } from "../../../Context/AuthContext";
 import Friends from "../../friends/Friends";
+import { useContext } from "react";
+import { AuthContext } from "../../../Context/AuthContext";
 
 export default function Sidebar() {
+  const {user,setUser} = useContext(AuthContext);
   return (
     <div className="sidebar">
       <div className="sideBarWrapper">
@@ -28,9 +31,9 @@ export default function Sidebar() {
         <button className="sideBarBtn">Show More</button>
         <hr className="sideBarHr" />
         <ul className="sideBarFriendList">
-          {users.map((u) => (
-            <Friends key={u.id} user={u} />
-          ))}
+          {/* {user.followings.map((u) => (
+            <Friends key={user.followings} user={u} />
+          ))} */}
         </ul>
       </div>
     </div>
