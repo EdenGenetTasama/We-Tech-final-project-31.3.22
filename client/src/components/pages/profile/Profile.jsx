@@ -2,7 +2,7 @@ import Topbar from "../../parts/topbar/Topbar";
 import Sidebar from "../../parts/sidebar/Sidebar";
 import Feed from "../../parts/feed/Feed";
 import Rightbar from "../../parts/rightbar/Rightbar";
-import CollapseFooter from "../../parts/collapseFooter/CollapseFooter"
+import CollapseFooter from "../../parts/collapseFooter/CollapseFooter";
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -10,15 +10,13 @@ import axios from "axios";
 import "./profile.css";
 
 export default function Profile() {
-
   const [user, setUser] = useState({});
-  const PF = `http://localhost:8800` ;
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const userName = useParams().userName;
-
 
   useEffect(() => {
     const fetchUser = async () => {
-      const res = await axios.get(PF+`/users/?username=${userName}`);
+      const res = await axios.get( `http://localhost:8800/users/?username=${userName}`);
       setUser(res.data);
     };
     fetchUser();
@@ -36,10 +34,8 @@ export default function Profile() {
                 className="profileCoverImg"
                 src={
                   user.coverPicture
-
-                    ?  user.coverPicture
-                    : "https://upload.wikimedia.org/wikipedia/commons/b/b9/No_Cover.jpg"
-
+                    ? user.coverPicture
+                    : PF+"/persons/noCover.png"
                 }
                 alt="Cover pic is not available"
               />
@@ -47,15 +43,19 @@ export default function Profile() {
                 className="profileUserImg"
                 src={
                   user.profilePicture
-                    ?  user.profilePicture
-                    : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                    ? user.profilePicture
+                    : PF+"/persons/noAvatar.webp"
                 }
                 alt="Profile pic is not available"
               />
             </div>
             <div className="profileInfo">
-              <h4 className="profileInfoName">{user.userName+" "+user.userLastName}</h4>
-              <span className="profileIDescription">{user.dec?user.dec:" "}</span>
+              <h4 className="profileInfoName">
+                {user.userName + " " + user.userLastName}
+              </h4>
+              <span className="profileIDescription">
+                {user.dec ? user.dec : " "}
+              </span>
             </div>
           </div>
           <div className="profileRightBottom">
@@ -64,7 +64,7 @@ export default function Profile() {
           </div>
         </div>
       </div>
-      <CollapseFooter/>
+      <CollapseFooter />
     </>
   );
 }
