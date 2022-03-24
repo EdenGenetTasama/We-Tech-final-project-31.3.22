@@ -3,11 +3,12 @@ import { Person, Search, Chat, Notifications } from "@material-ui/icons";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../../Context/AuthContext";
-import jwt_decoded from "jwt-decode";
+
+
 
 export default function Topbar() {
   const { user } = useContext(AuthContext);
-  // let decoded = jwt_decoded(user.token)
+  
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const { dispatch } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -18,10 +19,9 @@ export default function Topbar() {
       dispatch({});
       console.log("logout");
       window.location.reload();
-      navigate("/login");
+      navigate("/Login");
     }
   };
-  // location.reload();
 
   return (
     <div className="topBarContainer">
@@ -66,7 +66,8 @@ export default function Topbar() {
         <button type="button" onClick={logOutBut}>
           logout
         </button>
-        <Link to={`profile/${user.userName}`}>
+
+        <Link to={`/profile/${user.userName}`}>
           <img
             src={
               user.profilePicture

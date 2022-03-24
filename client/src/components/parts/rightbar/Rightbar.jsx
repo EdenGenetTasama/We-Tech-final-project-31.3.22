@@ -11,7 +11,7 @@ import {Add, Remove} from "@material-ui/icons"
 
 export default function Rightbar({ user }) {
   const [friends, setFriends] = useState([]);
-  const PF = process.env.REACT_APP_PUBLIC_URL;
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const {user:currentUser,dispatch}=useContext(AuthContext);
   const [followed,setFollowed]= useState({});
 
