@@ -20,9 +20,9 @@
     justify-content: center;
 }
 .loginLogo{
+    color:  #5c155c;;
     font-size: 50px;
     font-weight: 800;
-    color: #1775ee;
     margin-bottom: 10px;
 }
 
@@ -49,7 +49,7 @@
     height: 50px;
     border-radius: 10px;
     border: none;
-    background-color: #1775ee;
+    background-color:  #5c155c;;
     color: white;
     font-size: 20px;
     font-weight: 500;
@@ -70,7 +70,7 @@
     height: 50px;
     border-radius: 10px;
     border: none;
-    background-color: #42b72a;
+    background-color:  #5c155c;;
     color: white;
     font-size: 20px;
     font-weight: 500;
