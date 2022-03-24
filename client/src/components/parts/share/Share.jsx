@@ -58,6 +58,7 @@ export default function Share() {
             ref={desc}
           />
         </div>
+        <hr className="shareHR"/>
         <form className="shareButton" onSubmit={submitHandler}>
           <div className="shareOptions">
             <label htmlFor="file" className="shareOption">
