@@ -1,10 +1,17 @@
 import axios from "axios";
+import jwt_decode from "jwt-decode";
 
 export const loginCall = async (userCredentials,dispatch)=>{
     dispatch({type:"LOGIN_START"});
     try {
         const res = await axios.post("http://localhost:8800/auth/login",userCredentials)
-        dispatch({type:"LOGIN_SUCCESS",payload:res.data})
+        .then((res) => {
+            localStorage.setItem('user',res.data.token);
+            const token = localStorage.getItem('user');
+            const decoded = jwt_decode(token);
+            dispatch({type:"LOGIN_SUCCESS",payload:decoded})
+          })
+        
     } catch (error) {
         dispatch({type:"LOGIN_FAILURE",payload:error})
         

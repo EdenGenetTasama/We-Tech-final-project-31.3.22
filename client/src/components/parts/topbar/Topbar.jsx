@@ -1,6 +1,6 @@
 import "./topbar.css";
 import { Person, Search, Chat, Notifications } from "@material-ui/icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../../Context/AuthContext";
 import jwt_decoded from "jwt-decode";
@@ -9,6 +9,19 @@ export default function Topbar() {
   const { user } = useContext(AuthContext);
   // let decoded = jwt_decoded(user.token)
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  const { dispatch } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const logOutBut = () => {
+    if (localStorage.user) {
+      localStorage.removeItem("user");
+      dispatch({});
+      console.log("logout");
+      window.location.reload();
+      navigate("/login");
+    }
+  };
+
   return (
     <div className="topBarContainer">
       <div className="topBarLeft">
@@ -48,13 +61,21 @@ export default function Topbar() {
             <span className="topbarIconBadge">3</span>
           </div>
         </div>
+
+        <button type="button" onClick={logOutBut}>
+          logout
+        </button>
         <Link to={`profile/${user.userName}`}>
-        <img
-          src={user.profilePicture ? user.profilePicture : PF+"/persons/noAvatar.webp"}
-          alt="profileImage"
-          className="topbarImage"
+          <img
+            src={
+              user.profilePicture
+                ? user.profilePicture
+                : PF + "/persons/noAvatar.webp"
+            }
+            alt="profileImage"
+            className="topbarImage"
           />
-          </Link>
+        </Link>
       </div>
     </div>
   );
