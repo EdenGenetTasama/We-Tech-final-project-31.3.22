@@ -21,6 +21,7 @@ export default function Topbar() {
       navigate("/login");
     }
   };
+  // location.reload();
 
   return (
     <div className="topBarContainer">
