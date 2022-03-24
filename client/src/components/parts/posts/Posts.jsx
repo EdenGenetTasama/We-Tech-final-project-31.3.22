@@ -8,7 +8,6 @@ import { AuthContext } from "../../../Context/AuthContext";
 
 
 export default function Posts({post}) {
-
   const [like,setLike] = useState(post.likes.length);
   const [isLiked,setIsLiked] =useState(false) ;
   const [user,setUser] =useState({}) ;
@@ -37,8 +36,6 @@ export default function Posts({post}) {
     catch(err){
 
     }
-    
-
     setLike(isLiked?like - 1 : like + 1)
     setIsLiked(!isLiked)
   }
