@@ -52,9 +52,11 @@ module.exports = {
           res.status(200).json("The post has been liked");
         } else {
           await Post.updateOne({ $pull: { likes: req.body.userId } });
+          console.log(Post);
           res.status(200).json("The post has been disliked");
         }
       } catch (err) {
+        console.log(err)
         res.status(500).json(err);
       }
   },
@@ -62,17 +64,13 @@ module.exports = {
       //Get timeline post
    timelinePosts: async (req, res) => {
     try {
-      // let postArray;
       const currentUser = await user.findById(req.params.userId);
       const userPost = await posts.find({ userId: currentUser._id });
-      // console.log(userPost);
       const friendsPost = await Promise.all(
         currentUser.followings.map((friendId) => {
           return posts.find({ userId: friendId })
         })
         );
-        // postArray= [...userPost,...friendsPost];
-        // res.status(200).json(postArray)
         res.status(200).json(userPost.concat(...friendsPost));
       } catch (error) {
         res.status(500).json(error)

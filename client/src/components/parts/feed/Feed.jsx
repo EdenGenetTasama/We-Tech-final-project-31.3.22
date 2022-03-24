@@ -23,7 +23,6 @@ export default function Feed({ userName }) {
     FetchPost();
   }, [userName, user._id]);
 
-  console.log(post);
 
   return (
     <div className="feed">

@@ -9,7 +9,7 @@ const INITIAL_STATE={
         birthDate: "1994-12-11T22:00:00.000Z",
         email: "eden@gmail.com",
         password: "$2a$10$AUQQx1VQQ6.ZCPFHYn1VE.NzTNXHLNXfQrdSANon4dTvvB5ilZNya",
-        profilePicture: "",
+        profilePicture: "https://m.media-amazon.com/images/I/617K2x4FRoL._AC_SY679_.jpg",
         coverPicture: "",
         followers: [
             "622b2255aa086d5555abea6a",
