@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { format } from "timeago.js";
 import axios from "axios";
 import { AuthContext } from "../../../Context/AuthContext";
-import Comments from "../comments/Comments.jsx";
+import Comments from "../comments/Comments";
 
 export default function Posts({ post }) {
   const [like, setLike] = useState(post.likes.length);
