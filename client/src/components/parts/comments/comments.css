@@ -1,0 +1,20 @@
+.commentsContainer{
+    padding: 2%;
+    
+}
+
+.inputComment{
+    margin: 2%;
+    width: 80%;
+    height: 20px;
+    border-radius: 5%;
+
+}
+
+.buttonComment{
+    width: 10%;
+    border-radius: 5%;
+    height: 25px;
+    font-size: 18px;
+
+}

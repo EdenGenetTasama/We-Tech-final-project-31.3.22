@@ -89,6 +89,22 @@ module.exports = {
       } catch (error) {
         res.status(400).json(error);
       }
+    },
+
+    addComment:async (req, res)=>{
+      try {
+        const Post = await posts.findById(req.params.id);
+        if (!Post.comments.includes(req.body.userId)) {
+          await Post.updateOne({ $push: { comments: req.body , userId:  req.body.userId} });
+          res.status(200).json("The comments has been post");
+        } else {
+          await Post.updateOne({ $pull: { comments: req.body} });
+          res.status(200).json("The comments has been unposed");
+        }
+      } catch (err) {
+        console.log(err)
+        res.status(500).json(err);
+      }
     }
 
 }
