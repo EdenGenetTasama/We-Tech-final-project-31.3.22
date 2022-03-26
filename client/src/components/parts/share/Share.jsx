@@ -16,7 +16,6 @@ export default function Share() {
       userId: user._id,
       desc: desc.current.value,
     };   
-       console.log(file)
 
     if (file) {
       const data = new FormData();
