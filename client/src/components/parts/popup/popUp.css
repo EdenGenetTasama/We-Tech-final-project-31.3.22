@@ -1,0 +1,100 @@
+.popup-box {
+    position: fixed;
+    background: #00000050;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.box {
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+    height: 60vh;
+    max-height: 75vh;
+    margin-top: calc(100vh - 85vh - 20px);
+    background: #fff;
+    border-radius: 4px;
+    padding: 20px;
+    border: 1px solid #999;
+    overflow: auto;
+ 
+}
+
+.PopUpCard {
+    display: flex;
+    justify-content: space-between;
+    width: 97%;
+}
+
+.PopUpCard div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 50%;
+}
+
+.PopUpCard img {
+    height: 540px;
+    width: 40%;
+
+}
+
+.close-icon {
+    content: 'x';
+    cursor: pointer;
+    position: fixed;
+    right: calc(22% - 30px);
+    top: calc(100vh - 85vh - 33px);
+    background: #ededed;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    line-height: 20px;
+    text-align: center;
+    border: 1px solid #999;
+    font-size: 20px;
+}
+
+.popup-box-container {
+    width: 100%;
+    height: 20vh;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+    box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+    margin: 2%;
+    padding: 2%;
+}
+
+.popUpProfileImage{
+    width: 60px;
+    height: 60px;
+    border-radius:50%;
+    object-fit: cover;
+    margin-right: 10px;
+
+}
+
+.popup-Comments{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 2%;
+    padding-left: 2%;
+
+}
+
+.commentClass{
+    text-align: center;
+    font-size: 15px;
+
+
+}
+.popUserName{
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 2%;
+    
+}
+
