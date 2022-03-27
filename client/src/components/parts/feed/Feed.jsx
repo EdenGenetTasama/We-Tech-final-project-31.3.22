@@ -24,6 +24,7 @@ export default function Feed({ userName }) {
   }, [userName, user._id]);
 
 
+
   return (
     <div className="feed">
       <div className="feedWrapper">

@@ -94,11 +94,12 @@ module.exports = {
     addComment:async (req, res)=>{
       try {
         const Post = await posts.findById(req.params.id);
+        const currentUser = await user.findById(req.body.userId);
         if (!Post.comments.includes(req.body.userId)) {
-          await Post.updateOne({ $push: { comments: req.body , userId:  req.body.userId} });
+          await Post.updateOne({ $push: { comments: req.body , userId: posts.userId} });
           res.status(200).json("The comments has been post");
         } else {
-          await Post.updateOne({ $pull: { comments: req.body} });
+          await Post.updateOne({ $pull: { comments: req.body, userId:  posts.userId} });
           res.status(200).json("The comments has been unposed");
         }
       } catch (err) {

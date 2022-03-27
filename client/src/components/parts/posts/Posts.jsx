@@ -6,6 +6,7 @@ import { format } from "timeago.js";
 import axios from "axios";
 import { AuthContext } from "../../../Context/AuthContext";
 import Comments from "../comments/Comments";
+import PopUp from "../popup/PopUp";
 
 export default function Posts({ post }) {
   const [like, setLike] = useState(post.likes.length);
@@ -13,19 +14,24 @@ export default function Posts({ post }) {
   const [user, setUser] = useState({});
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const { user: currentUser } = useContext(AuthContext);
+  const [isOpen, setIsOpen] = useState(false);
+
 
   useEffect(() => {
     setIsLiked(post.likes.includes(currentUser._id));
   }, [currentUser._id, post.likes]);
+  
+  // useEffect(()=>{
+  //   console.log(post)
+  // },[])
 
-  // post = , אובייקט של היוזר, אובייקט של הפוסטים של היוזר, ומערך של אובייקטים של העוקבעים
+
   useEffect(() => {
     const FetchUser = async () => {
       const respond = await axios.get(
         `http://localhost:8800/users/?userId=${post.userId}`
       );
       setUser(respond.data);
-      // console.log(post)
     };
     FetchUser();
   }, [post.userId]);
@@ -40,30 +46,16 @@ export default function Posts({ post }) {
     setIsLiked(!isLiked);
   };
 
-  const the_button = document.querySelector(".js-btn");
-  const modal = document.querySelector(".modal")
-const closeBtn = document.querySelector(".close")
 
-  function handleClick(event) {
-    modal.style.display = "block";
-    closeBtn.addEventListener("click", () => {
-      modal.style.display = "none"
-    })
-  }
-
-
-  const openComments = () => {
-    document.addEventListener("DOMContentLoaded",() => {
-      the_button.addEventListener("click", handleClick)
-      console.log("lala");
-    })
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
   };
-
   return (
     <div className="postContainer">
       <div className="postWrapper">
         <div className="postTop">
           <div className="postTopLeft">
+            {isOpen && <PopUp handleClose={togglePopup} post={post} />}
             <Link to={`/profile/${user.userName}`}>
               <img
                 className="postProfileImage"
@@ -104,7 +96,7 @@ const closeBtn = document.querySelector(".close")
           </div>
 
           <div className="postBottomRight">
-            <span className="postCommentText" onClick={openComments}>
+            <span className="postCommentText" onClick={togglePopup}>
               {post.comments ? post.comments.length : "0"} comments
             </span>
           </div>
