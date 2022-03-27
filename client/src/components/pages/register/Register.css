@@ -39,6 +39,7 @@
     height: 50px;
     border-radius :10px;
     border: 1px solid gray;
+    margin: 3px;
     font-size: 10px;
     padding-left: 20px;
 }
@@ -51,6 +52,7 @@
     border: none;
     background-color:  #5c155c;;
     color: white;
+    margin: 6px;
     font-size: 20px;
     font-weight: 500;
     cursor: pointer;
