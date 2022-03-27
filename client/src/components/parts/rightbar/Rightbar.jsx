@@ -68,11 +68,30 @@ export default function Rightbar({ user }) {
           </span>
         </div>
         <img src="/assets/persons/tech-career.png" className="adImg" />
-        <h4 className="rightBarTitle">Online Friends</h4>
+        <h4 className="rightBarTitle">Syllabus</h4>
         <ul className="rightBarFriendList">
-          {users.map((u) => (
+          {/* {users.map((u) => (
             <Online key={u.id} user={u} />
-          ))}
+          ))} */}
+          {
+            <ul>
+              <li>
+              <Link to={"/cyllabus/html/Html"}>
+                html
+              </Link>
+              </li>
+              <li>
+              <Link to={"/cyllabus/javascript/JavaScript"}>
+                JavaScript
+              </Link>
+              </li>
+              <li>
+              <Link to={"/cyllabus/css/Css"}>
+                Css
+              </Link>
+              </li>
+            </ul>
+          }
         </ul>
       </>
     );

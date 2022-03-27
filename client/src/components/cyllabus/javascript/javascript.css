@@ -1,0 +1,21 @@
+.htmlTitle{
+    text-align: center;
+}
+article{
+    display: flex;
+    align-items: center;
+}
+hr{
+    margin: 10px 0 ;
+}
+.firstTitle{
+    display: flex;
+    width: auto;
+    height: auto;
+}
+
+.img{
+    width: 200px;
+    height: 20vh;
+}
+
