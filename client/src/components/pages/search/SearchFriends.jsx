@@ -13,12 +13,11 @@ import { AuthContext } from "../../../Context/AuthContext";
 export default function SearchFriends() {
   const userName = useParams().userName;
   const [userFind, setUserFind] = useState([]);
-
+  
   const {user:currentUser}=useContext(AuthContext);
-
-
-
-
+  
+  
+  
   useEffect(() => {
     const fetchUserByName = async () => {
       const res = await axios.get(
@@ -30,7 +29,6 @@ export default function SearchFriends() {
   }, []);
 
   const followClick=(user)=>{
-    
     axios.put(`http://localhost:8800/users/${currentUser._id}/follow`,{
       userId:user._id,
     })

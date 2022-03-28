@@ -15,14 +15,13 @@ export default function Topbar() {
   const navigate = useNavigate();
 
 
-
   const logOutBut = () => {
     if (localStorage.user) {
       localStorage.removeItem("user");
-      dispatch({});
       console.log("logout");
-      window.location.reload();
+      // window.location.reload();
       navigate("/Login");
+      dispatch({});
     }
   };
 
@@ -77,8 +76,7 @@ export default function Topbar() {
         logout
         </Button>
 
-
-        <Link to={`/profile/${user.userName}`}>
+{user? <Link to={`/profile/${user.userName}`}>
           <img
             src={
               user.profilePicture
@@ -88,7 +86,8 @@ export default function Topbar() {
             alt="profileImage"
             className="topbarImage"
           />
-        </Link>
+        </Link> : null}
+        
       </div>
     </div>
   );
