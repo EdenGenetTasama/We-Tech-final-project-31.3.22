@@ -2,7 +2,8 @@ const usersRouter = require('express').Router();
 const userCtrl = require('../controllers/user-cntl');
 
 usersRouter.get('/', userCtrl.getUsers);
-usersRouter.get('/search', userCtrl.getAllUserForSearch);
+usersRouter.get('/getByUserName', userCtrl.searchByUserName);
+
 usersRouter.get('/:id', userCtrl.getUserById);
 usersRouter.put('/:id',userCtrl.updateUser);
 usersRouter.delete('/:id',userCtrl.deleteUser);

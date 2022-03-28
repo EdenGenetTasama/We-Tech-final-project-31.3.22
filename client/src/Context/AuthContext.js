@@ -4,7 +4,7 @@ import AuthReducer from "./AuthReducer";
 import jwt_decode from "jwt-decode";
 
 const INITIAL_STATE = {
-  user: null,
+  user: {} ,
   isFetching: false,
   error: false,
 };

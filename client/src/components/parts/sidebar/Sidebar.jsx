@@ -7,6 +7,8 @@ import { AuthContext } from "../../../Context/AuthContext";
 
 export default function Sidebar() {
   const { user, setUser } = useContext(AuthContext);
+  console.log(user)
+
   return (
     <div className="sidebar">
       <div className="sideBarWrapper">
@@ -31,11 +33,10 @@ export default function Sidebar() {
         <button className="sideBarBtn">Show More</button>
         <hr className="sideBarHr" />
         <ul className="sideBarFriendList">
-          {user.followings.length >= 1
-            ? user.followings.map((userItem) => 
+          {user.followings? user.followings.map((userItem) => 
                 <Friends key={userItem} user={userItem} />
-              )
-            : null}
+              ):"not found"
+           }
         </ul>
       </div>
     </div>

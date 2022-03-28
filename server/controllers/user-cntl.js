@@ -15,13 +15,14 @@ module.exports = {
       res.status(500).json(err)
     }
   },
-  getAllUserForSearch:async (req,res)=>{
+  searchByUserName:async (req,res)=>{
+    const usernameQ = req.query.username
     try {
-    const allUsers=  await User.find();
-     res.status(200).json(allUsers);
-
+      const users = await User.find({userName: new RegExp(usernameQ, 'i') });
+      res.status(200).json(users);
     } catch (err) {
       res.status(500).json(err)
+
     }
   },
 
@@ -83,7 +84,8 @@ module.exports = {
   followUser: async (req, res) => {
     if (req.body.userId !== req.params.id) {
       try {
-        const user = await User.findById(req.params.id)
+        const user = await User.findById(req.params.id);
+        console.log(user);
         const currentUser = await User.findById(req.body.userId)
         if (!user.followers.includes(req.body.userId)) {
           await user.updateOne({ $push: { followers: req.body.userId } })
