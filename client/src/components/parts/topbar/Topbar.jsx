@@ -3,15 +3,18 @@ import { Person, Search, Chat, Notifications } from "@material-ui/icons";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../../Context/AuthContext";
-
-
+import Button from "@material-ui/core/Button";
+import {useState} from 'react';
 
 export default function Topbar() {
   const { user } = useContext(AuthContext);
-  
+  const [searchFriends , setSearchFriends] = useState({});
+
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const { dispatch } = useContext(AuthContext);
   const navigate = useNavigate();
+
+
 
   const logOutBut = () => {
     if (localStorage.user) {
@@ -22,6 +25,10 @@ export default function Topbar() {
       navigate("/Login");
     }
   };
+
+  const searchFriendsBut = () => {
+    navigate(`/searchFriends/${searchFriends}`);
+  }
 
   return (
     <div className="topBarContainer">
@@ -36,7 +43,11 @@ export default function Topbar() {
           <input
             placeholder="Search for friends, post"
             className="searchInput"
+            onChange={(e) => setSearchFriends(e.target.value)}
           />
+          
+          <button className="searchButton" onClick={searchFriendsBut} >Search</button>
+        
         </div>
       </div>
 
@@ -62,10 +73,10 @@ export default function Topbar() {
             <span className="topbarIconBadge">3</span>
           </div>
         </div>
+        <Button variant="contained" color="secondary" size="small" onClick={logOutBut}>
+        logout
+        </Button>
 
-        <button type="button" onClick={logOutBut}>
-          logout
-        </button>
 
         <Link to={`/profile/${user.userName}`}>
           <img
