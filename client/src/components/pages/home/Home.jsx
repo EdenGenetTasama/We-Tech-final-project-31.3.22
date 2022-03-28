@@ -4,7 +4,6 @@ import Feed from '../../parts/feed/Feed';
 import Rightbar from '../../parts/rightbar/Rightbar';
 import CollapseFooter from "../../parts/collapseFooter/CollapseFooter";
 import './home.css';
-import { useEffect } from "react";
 
 
 export default function Home() {

@@ -45,6 +45,7 @@
     background-color:white;
     border-radius:30px;
     display: flex;
+    justify-content:space-between;
     align-items: center;
 }
 .topBarRight{
@@ -96,4 +97,17 @@
     object-fit: cover;
     cursor: pointer;
 
+}
+
+.searchButton{
+    width: 60px;
+    height: 30px;
+    border-radius:15%;
+    background-color: #5c155c;
+    color: white;
+    font-size:15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

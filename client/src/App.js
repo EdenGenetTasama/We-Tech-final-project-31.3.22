@@ -10,7 +10,11 @@ import { AuthContext } from "./Context/AuthContext";
 import Html from "./components/cyllabus/html/Html";
 import Css from "./components/cyllabus/css/Css.jsx";
 import JavaScript from "./components/cyllabus/javascript/JavaScript.jsx";
+
 import { ThemeContext } from "./Context/theme.js"
+
+
+import SearchFriends from "./components/pages/search/SearchFriends.jsx";
 
 
 
@@ -19,7 +23,6 @@ function App() {
   const [{ theme, isDark }, toggleTheme] = useContext(ThemeContext);
   return (
     <div  style={{ backgroundColor: theme.backgroundColor, color: theme.color }}>
-      {/* <div className="text">It's a {isDark ? "Dark" : "Light"} theme</div> */}
       <div className="buttonBackground"><button type="button" onClick={toggleTheme} className="ToggleButton">
         Toggle theme
       </button></div>
@@ -29,7 +32,8 @@ function App() {
           <Route exact path="/cyllabus/html/Html" element={user ? <Html/>: <Home/>}> </Route>
           <Route exact path="/cyllabus/Css/Css" element={user ? <Css/>: <Home/>}> </Route>
           <Route exact path="/cyllabus/javaScript/javaScript" element={user ? <JavaScript/>: <Home/>}> </Route>
-          <Route path="/Login" element={!user ?  <Login/> : <Home/>}> </Route>
+          <Route exact path="/searchFriends/:userName" element={user ? <SearchFriends/>: <Home/>}> </Route>
+          <Route path="/Login/" element={!user ?  <Login/> : <Home/>}> </Route>
           <Route path="/Register" element={user ? <Link to="/"/> : <Register/>}> </Route>
           <Route path="/Profile/:userName" element={ <Profile/>}> </Route>
         </Routes>
