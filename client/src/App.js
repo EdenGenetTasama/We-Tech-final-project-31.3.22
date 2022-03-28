@@ -10,15 +10,19 @@ import { AuthContext } from "./Context/AuthContext";
 import Html from "./components/cyllabus/html/Html";
 import Css from "./components/cyllabus/css/Css.jsx";
 import JavaScript from "./components/cyllabus/javascript/JavaScript.jsx";
+import { ThemeContext } from "./Context/theme.js"
 
 
 
 function App() {
   const {user} = useContext(AuthContext);
-  
+  const [{ theme, isDark }, toggleTheme] = useContext(ThemeContext);
   return (
-    <div className="App">
-
+    <div  style={{ backgroundColor: theme.backgroundColor, color: theme.color }}>
+      {/* <div className="text">It's a {isDark ? "Dark" : "Light"} theme</div> */}
+      <div className="buttonBackground"><button type="button" onClick={toggleTheme} className="ToggleButton">
+        Toggle theme
+      </button></div>
         <BrowserRouter>
         <Routes>
           <Route exact path="/" element={user ? <Home/>: <Register/>}> </Route>
@@ -30,8 +34,8 @@ function App() {
           <Route path="/Profile/:userName" element={ <Profile/>}> </Route>
         </Routes>
         </BrowserRouter>
-
     </div>
+
   );
 }
 

@@ -6,7 +6,7 @@ import "./collapseFooter.css";
 export default function CollapseFooter() {
 
   return (
-    <div className="collapse">
+    <div className="collapseFooter">
       <div className="footer">
         <div id="button"></div>
         <div id="container">
