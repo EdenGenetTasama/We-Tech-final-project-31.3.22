@@ -6,7 +6,8 @@ import "./collapseFooter.css";
 export default function CollapseFooter() {
 
   return (
-    // <div className="collapseFooter">
+    <div className="collapseFooter">
+
       <div className="footer">
         <div id="button"></div>
         <div id="container">
@@ -31,6 +32,6 @@ export default function CollapseFooter() {
           </div>
         </div>
       </div>
-    // </div>
+    </div>
   );
 }

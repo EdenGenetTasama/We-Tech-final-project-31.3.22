@@ -5,12 +5,16 @@ import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import { AuthContextProvider} from "./Context/AuthContext"
+import { ThemeProvider } from './Context/theme';
 ReactDOM.render(
   <React.StrictMode>
-    <AuthContextProvider>
+    <ThemeProvider>
+         <AuthContextProvider>
         <App />
     </AuthContextProvider>
   
+    </ThemeProvider>
+ 
   </React.StrictMode>,
   document.getElementById('root')
 );

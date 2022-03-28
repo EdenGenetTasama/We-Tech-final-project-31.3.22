@@ -1,11 +1,12 @@
 
-
 .collapseFooter{
   font-family: 'Source Sans Pro', sans-serif;
-  font-weight:300;
+  font-weight:200;
   background-color:rgb;
   color:#FFF;
 }
+
+
 .footer #button{
   width:35px;
   height:35px;

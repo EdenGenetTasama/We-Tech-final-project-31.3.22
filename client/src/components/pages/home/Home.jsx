@@ -5,6 +5,7 @@ import Rightbar from '../../parts/rightbar/Rightbar';
 import CollapseFooter from "../../parts/collapseFooter/CollapseFooter";
 import './home.css';
 
+
 export default function Home() {
 
   return (

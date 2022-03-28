@@ -41,3 +41,17 @@
     transform: rotate(360deg);
   }
 } */
+
+
+.ToggleButton{
+  color: white;
+  font-size: 16px;
+  border-radius: 13%;
+  background-color:#5c155c ;
+
+}
+
+.buttonBackground{
+  background-color:#5c155c ;
+
+}
