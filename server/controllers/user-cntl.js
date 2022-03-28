@@ -5,7 +5,6 @@ module.exports = {
   getUsers: async (req, res) => {
     const userIdQ = req.query.userId
     const usernameQ = req.query.username
-
     try {
       const user = userIdQ
         ? await User.findById(userIdQ)
@@ -16,6 +15,16 @@ module.exports = {
       res.status(500).json(err)
     }
   },
+  getAllUserForSearch:async (req,res)=>{
+    try {
+    const allUsers=  await User.find();
+     res.status(200).json(allUsers);
+
+    } catch (err) {
+      res.status(500).json(err)
+    }
+  },
+
   getUserById: async (req, res) => {
     await User
       .findById(req.params.id)
