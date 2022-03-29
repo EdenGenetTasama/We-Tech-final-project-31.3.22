@@ -82,8 +82,8 @@ module.exports = {
     try {
       const userByName = await user.findOne({userName : req.params.userName});
       const postsByIdUser = await posts.find({userId : userByName._id}) ;
-      res.status(200).json({postsByIdUser: [...postsByIdUser],...userByName});
-      // console.log(userByName);
+      res.status(200).json(postsByIdUser);
+      // console.log(postsByIdUser);
       // console.log(postsByIdUser);
 
       } catch (error) {
