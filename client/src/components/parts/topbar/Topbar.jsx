@@ -18,8 +18,7 @@ export default function Topbar() {
   const logOutBut = () => {
     if (localStorage.user) {
       localStorage.removeItem("user");
-      console.log("logout");
-      // window.location.reload();
+      window.location.reload();
       navigate("/Login");
       dispatch({});
     }
@@ -51,13 +50,13 @@ export default function Topbar() {
       </div>
 
       <div className="topBarRight">
-        <div className="topbarLinks">
+        {/* <div className="topbarLinks">
           <span className="topbarLink">homePage</span>
           <span className="topbarLink">Timeline</span>
-        </div>
+        </div> */}
 
         <div className="topbarIcons">
-          <div className="tobarIconItem">
+          {/* <div className="tobarIconItem">
             <Person className="Icon" />
             <span className="topbarIconBadge">1</span>
           </div>
@@ -70,7 +69,7 @@ export default function Topbar() {
           <div className="tobarIconItem">
             <Notifications className="Icon" />
             <span className="topbarIconBadge">3</span>
-          </div>
+          </div> */}
         </div>
         <Button variant="contained" color="secondary" size="small" onClick={logOutBut}>
         logout
