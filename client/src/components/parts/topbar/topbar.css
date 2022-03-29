@@ -111,3 +111,28 @@
     align-items: center;
     justify-content: center;
 }
+
+@media only screen and (max-width: 426px) {
+   
+    .topBarContainer {
+        width: fit-content;
+      
+    }
+    .logoName{
+        font-size: 10px;
+        margin-left: 2;
+    }
+    .topicText b{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .topBarLeft{
+        width: fit-content;
+    }
+    .topBarCenter{
+        width: fit-content;
+    }
+    .topBarRight{
+        width: fit-content;
+    }
+  }

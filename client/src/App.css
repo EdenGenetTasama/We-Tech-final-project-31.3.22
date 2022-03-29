@@ -55,3 +55,12 @@
   background-color:#5c155c ;
 
 }
+
+@media only screen and (max-width: 426px) {
+  .ToggleButton{
+    width: fit-content;
+  }
+  .buttonBackground{
+    width: 136.5%;
+  }
+}

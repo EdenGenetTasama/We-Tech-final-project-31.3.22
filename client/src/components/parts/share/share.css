@@ -75,3 +75,23 @@
     margin-right: 20px;
     cursor: pointer;
 }
+
+
+@media only screen and (max-width: 426px) {
+    .shareWrapper{
+        padding: 0;
+    }
+    .share-container{
+        width: 70%;
+        margin: 5px;
+    }
+    .shareOptions{
+        width: 40%;
+    }
+    .shareButton{
+        width: 40%;
+    }
+    .shareIcon{
+        font-size: 100px;
+    }
+  }

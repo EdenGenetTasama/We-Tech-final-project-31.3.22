@@ -20,3 +20,10 @@ hr{
     height: 20vh;
 }
 
+@media only screen and (max-width: 426px) {
+   
+    .content {
+      width: 100vw;
+      
+    }
+  }

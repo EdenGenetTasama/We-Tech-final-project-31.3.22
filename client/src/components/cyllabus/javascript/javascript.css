@@ -1,21 +1,33 @@
-.htmlTitle{
-    text-align: center;
-}
-article{
-    display: flex;
-    align-items: center;
-}
-hr{
-    margin: 10px 0 ;
-}
-.firstTitle{
-    display: flex;
-    width: auto;
-    height: auto;
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100&family=IBM+Plex+Mono:wght@100;400&display=swap");
+.htmlTitle {
+  text-align: center;
 }
 
-.img{
-    width: 200px;
-    height: 20vh;
+.content {
+  padding: 40px;
+  font-family: "IBM Plex Mono", monospace;
+}
+.hr {
+  border: dotted 5px grey;
+  margin-top: 10px;
+}
+.containImg {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.htmlImg {
+  margin: 10px;
+  width: 30%;
+  height: 40vh;
+}
+h2 {
+  font-family: "IBM Plex Mono", monospace;
+}
+.htmlVideo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
