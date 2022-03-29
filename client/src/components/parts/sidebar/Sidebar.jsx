@@ -7,7 +7,7 @@ import { AuthContext } from "../../../Context/AuthContext";
 
 export default function Sidebar() {
   const { user, setUser } = useContext(AuthContext);
-
+console.log(user);
   return (
     <div className="sidebar">
       <div className="sideBarWrapper">

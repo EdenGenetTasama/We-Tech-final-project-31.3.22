@@ -8,9 +8,11 @@ import axios from "axios";
 export default function Feed({ username }) {
   const [post, setPost] = useState([]);
   const { user } = useContext(AuthContext);
-  // let decoded = jwt_decoded(user.token)
+
+
   useEffect(() => {
     const FetchPost = async () => {
+     
       if (user) {
         const res = username
           ? await axios.get("http://localhost:8800/posts/profile/" + username)

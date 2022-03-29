@@ -77,6 +77,9 @@ height:100%;
   margin-top: 55px;
   float:left;
   text-align:center;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
 }
 .footer h3{
   font-family: 'Helvetica';
@@ -92,5 +95,4 @@ height:100%;
   margin-right:150px;
   height: 10vh;
   width: 45vw;
-  justify-content: space-between;
 }
