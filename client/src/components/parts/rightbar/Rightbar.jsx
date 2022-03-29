@@ -13,7 +13,7 @@ export default function Rightbar({ user }) {
   const [friends, setFriends] = useState([]);
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const {user:currentUser,dispatch}=useContext(AuthContext);
-  const [followed,setFollowed]= useState({});
+  const [followed,setFollowed]= useState(false);
 
   
   useEffect(()=>{
@@ -39,20 +39,21 @@ export default function Rightbar({ user }) {
   const handleClick =async ()=>{
     try {
       if (followed) {
-        await axios.put("http://localhost:8800/users/"+user._id+"/unfollow",{
-          userId:currentUser._id,
+        await axios.put("http://localhost:8800/users/"+currentUser._id+"/unfollow",{
+          userId:user._id,
         });
          dispatch({type:"UNFOLLOW",payload:user._id})
       }
       else{
-        await axios.put("http://localhost:8800/users/"+user._id+"/follow",{
-          userId:currentUser._id
+        await axios.put("http://localhost:8800/users/"+currentUser._id+"/follow",{
+          userId:user._id,
         });
          dispatch({type:"FOLLOW",payload:user._id})
       }
     } catch (error) {
       console.log(error);
     }
+    console.log(followed);
     setFollowed(!followed)
   }
 
@@ -98,6 +99,7 @@ export default function Rightbar({ user }) {
   };
 
   const ProfileRigthBar = () => {
+
     return (
       <>
       {user.userName !== currentUser.userName && (
@@ -134,7 +136,7 @@ export default function Rightbar({ user }) {
           <h4 className="rightBarTitleFirstPart">User Friend's</h4>
           <div className="rigthbarFollowings">
             {friends.map((friend) => (
-            <Link key={friend._id} to={"/profile/"+ friend.userName} style={{ textDecoration: "none" }}>
+            <Link key={friend._id} to={"/profile/"+ friend.userName} style={{ textDecoration: "none" }} > 
               <div className="rigthbarFollowing">
                 <img
                   src={friend.profilePicture ? friend.profilePicture : PF+"/persons/noAvatar.webp"}
