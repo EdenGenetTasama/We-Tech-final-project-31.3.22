@@ -22,6 +22,8 @@ export default function Profile() {
     fetchUser();
   }, [userName]);
 
+
+
   return (
     <>
       <Topbar />
