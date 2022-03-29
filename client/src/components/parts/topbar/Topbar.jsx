@@ -50,10 +50,6 @@ export default function Topbar() {
       </div>
 
       <div className="topBarRight">
-        {/* <div className="topbarLinks">
-          <span className="topbarLink">homePage</span>
-          <span className="topbarLink">Timeline</span>
-        </div> */}
 
         <div className="topbarIcons">
           {/* <div className="tobarIconItem">
