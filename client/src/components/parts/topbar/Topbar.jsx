@@ -50,23 +50,6 @@ export default function Topbar() {
       </div>
 
       <div className="topBarRight">
-
-        <div className="topbarIcons">
-          {/* <div className="tobarIconItem">
-            <Person className="Icon" />
-            <span className="topbarIconBadge">1</span>
-          </div>
-
-          <div className="tobarIconItem">
-            <Chat className="Icon" />
-            <span className="topbarIconBadge">2</span>
-          </div>
-
-          <div className="tobarIconItem">
-            <Notifications className="Icon" />
-            <span className="topbarIconBadge">3</span>
-          </div> */}
-        </div>
         <Button variant="contained" color="secondary" size="small" onClick={logOutBut}>
         logout
         </Button>
