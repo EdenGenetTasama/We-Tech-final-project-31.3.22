@@ -16,6 +16,7 @@ export default function AppRouter() {
 
   return (
     <div>
+
     <BrowserRouter>
         <Routes>
           <Route exact path="/" element={user ? <Home/>: <Register/>}> </Route>

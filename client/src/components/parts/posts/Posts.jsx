@@ -1,5 +1,5 @@
 import "./posts.css";
-import { MoreVert, Favorite, ThumbUp } from "@material-ui/icons";
+import { MoreVert, Favorite, ThumbUp, Delete, Edit } from "@material-ui/icons";
 import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { format } from "timeago.js";
@@ -16,15 +16,9 @@ export default function Posts({ post }) {
   const { user: currentUser } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
 
-
   useEffect(() => {
     setIsLiked(post.likes.includes(currentUser._id));
   }, [currentUser._id, post.likes]);
-  
-  // useEffect(()=>{
-  //   console.log(post)
-  // },[])
-
 
   useEffect(() => {
     const FetchUser = async () => {
@@ -46,6 +40,11 @@ export default function Posts({ post }) {
     setIsLiked(!isLiked);
   };
 
+  const deletePost = async () => {
+    await axios.delete(`http://localhost:8800/posts/${post._id}`, {
+      id: currentUser._id 
+    });
+  };
 
   const togglePopup = () => {
     setIsOpen(!isOpen);
@@ -74,7 +73,11 @@ export default function Posts({ post }) {
           </div>
 
           <div className="postTopRight">
-            <MoreVert />
+            <Edit />
+            <br />
+            <br />
+            <Delete onClick={deletePost} />
+            {/* <MoreVert /> */}
           </div>
         </div>
 
