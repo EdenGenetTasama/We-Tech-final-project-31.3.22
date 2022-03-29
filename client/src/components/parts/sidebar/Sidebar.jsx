@@ -32,7 +32,7 @@ export default function Sidebar() {
         <button className="sideBarBtn">Show More</button>
         <hr className="sideBarHr" />
         <ul className="sideBarFriendList">
-          {user.followings? user.followings.map((userItem) => 
+          {user.followers? user.followers.map((userItem) => 
                 <Friends key={userItem} user={userItem} />
               ):"not found"
            }
