@@ -55,12 +55,25 @@
   background-color:#5c155c ;
 
 }
+@media screen and (max-width: 320px) and (max-height: 426px){ 
+  .ToggleButton{
+    /* width: 100%;
+    margin-bottom: 10px; */
+    width: auto;
+    padding: auto;
+    font-size: auto;
+  }
+  hr{
+    display: none;
+  }
+}
+  
 
-@media only screen and (max-width: 426px) {
+/* @media only screen and (max-width: 426px) {
   .ToggleButton{
     width: fit-content;
   }
   .buttonBackground{
     width: 136.5%;
   }
-}
+} */

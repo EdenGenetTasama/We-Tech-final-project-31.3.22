@@ -37,3 +37,35 @@
 .profileInfoName{
     font-size: large;
 }
+
+@media screen and (max-width: 320px) and (max-height: 426px){ 
+    .profile{
+        flex-direction: column;
+    }
+    .profileRight{
+        flex: 1;
+        width: auto;
+    }
+    .profileRightBottom{
+        flex-direction: column;
+    
+    }
+    .profileCover{
+        height: auto;
+    }
+    .profileCoverImg{
+        width: 100%;
+        height: auto;
+    }
+    .profileUserImg{
+        width: 100px;
+        height: 100px;
+    }
+    .profileInfo{
+        width: 100%;
+    }
+    .profileInfoName{
+        font-size: medium;
+    }
+}
+    
