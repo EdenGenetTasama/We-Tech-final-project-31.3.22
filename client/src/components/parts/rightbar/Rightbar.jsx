@@ -1,13 +1,11 @@
 import "./rightbar.css";
 import { users } from "../../../dummyData";
-import Online from "../../online/Online";
 import { useEffect,useState} from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../../Context/AuthContext";
-import {Add, Remove} from "@material-ui/icons"
-
+import {Add, Remove} from "@material-ui/icons";
 
 export default function Rightbar({ user }) {
   const [friends, setFriends] = useState([]);
@@ -62,33 +60,27 @@ export default function Rightbar({ user }) {
   const HomeRigthBar = () => {
     return (
       <>
-        <div className="topicContainer">
-          <img className="topicImg" src="/assets/persons/gift.png" alt="" />
-          <span className="topicText">
-            <b>Our Courses</b>
-          </span>
-        </div>
+        
         <img src="/assets/persons/tech-career.png" className="adImg" />
-        <h4 className="rightBarTitle">Syllabus</h4>
+          <img className="topicImg" src="/assets/persons/gift.png" alt="" />
+        <h5 className="rightBarTitle">Syllabus</h5>
         <ul className="rightBarFriendList">
-          {/* {users.map((u) => (
-            <Online key={u.id} user={u} />
-          ))} */}
+
           {
-            <ul>
-              <li>
-              <Link to={"/cyllabus/html/Html"}>
-                html
+            <ul className="ulSyllabus">
+              <li className="linksToSyllabus">
+              <Link to={"/cyllabus/html/Html"}  className="links">
+                HTML
               </Link>
               </li>
-              <li>
-              <Link to={"/cyllabus/javascript/JavaScript"}>
-                JavaScript
+              <li className="linksToSyllabus">
+              <Link to={"/cyllabus/css/Css"}  className="links">
+                CSS
               </Link>
               </li>
-              <li>
-              <Link to={"/cyllabus/css/Css"}>
-                Css
+              <li className="linksToSyllabus">
+              <Link to={"/cyllabus/javascript/JavaScript"}  className="links">
+                JAVASCRIPT
               </Link>
               </li>
             </ul>

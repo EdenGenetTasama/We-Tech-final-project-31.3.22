@@ -30,3 +30,29 @@ h2 {
   justify-content: center;
   margin-bottom: 20px;
 }
+
+@media only screen and (max-width:426px) {
+  .content{
+    display: flex;
+    
+  }
+  article{
+    flex-wrap: wrap;
+  }
+  .secondContent{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .containImg{
+    display: flex;
+  }
+  .htmlImg{
+    flex-wrap: wrap;
+    width: 10vw;
+    height: 20vh;
+  }
+  .htmlVideo {
+ width: fit-content;
+ height: fit-content;
+}
+}
