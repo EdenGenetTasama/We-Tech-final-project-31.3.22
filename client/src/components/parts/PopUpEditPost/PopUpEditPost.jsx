@@ -1,4 +1,4 @@
-import '../PopUpEditPost/popUpEditPost.css'
+import './popUpEditPost.css'
 import { AuthContext } from "../../../Context/AuthContext";
 import { useState, useContext } from "react";
 import axios from "axios";
