@@ -1,143 +1,166 @@
-.rightBar{
-    flex: 3.5;
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100&family=IBM+Plex+Mono:wght@100;400&family=Kaushan+Script&display=swap");
+.rightBar {
+  flex: 3.5;
 }
 
-.rightBarWrapper{
-    padding: 20px 20px 0 0;
+.rightBarWrapper {
+  padding: 20px 20px 0 0;
 }
-.topicContainer{
+.topicContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+}
+.topicImg {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.topicText {
+  font-weight: 300;
+  font-style: 150px;
+  font-family: sans-serif;
+}
+.adImg {
+  width: 100%;
+  border-radius: 10px;
+  margin: 30px 0;
+}
+.rightBarTitle {
+  font-family: "IBM Plex Mono", monospace;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.rightBarFriendList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.rightBarFriend {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.rightBarProfileImgContainer {
+  margin-right: 10px;
+  position: relative;
+}
+.rightBarProfileImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.rightBarOnline {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: limegreen;
+  position: absolute;
+  top: -2px;
+  right: 0;
+  border: 2px solid white;
+}
+.rightBarUserName {
+  font-weight: 500;
+}
+
+.rightBarTitleFirstPart {
+  font-size: 18px;
+  font-weight: 500px;
+  margin-bottom: 10px;
+}
+
+.rigthbarFollowingIma {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.rigthBarInfo {
+  margin-bottom: 30px;
+}
+
+.rigthbarInfoItem {
+  margin-bottom: 10px;
+}
+
+.rigthbarInfoKey {
+  font-weight: 500px;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.rigthbarInfoValue {
+  font-weight: 500px;
+}
+
+.rigthbarFollowings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 15px;
+}
+
+.rigthbarFollowing {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.rightBarFollowingButton {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border: none;
+  background-color: purple;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.ulSyllabus{
     display: flex;
     align-items: center;
-}
-.topicImg{
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-}
-
-.topicText{
-    font-weight: 300;
-    font-style: 150px;
-    font-family: sans-serif;
-}
-.adImg{
-    width: 100%;
-    border-radius: 10px;
-    margin: 30px 0;
-}
-.rightBarTitle{
-    margin-bottom: 20px;
-}
-.rightBarFriendList{
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-.rightBarFriend{
-display: flex;
-align-items: center;
-margin-bottom: 15px;
-}
-.rightBarProfileImgContainer{
-    margin-right: 10px;
-    position: relative;
-}
-.rightBarProfileImg{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-
-}
-.rightBarOnline{
- width: 12px;
- height: 12px;
- border-radius: 50%;
- background-color: limegreen;
- position: absolute;
- top: -2px;
- right: 0;
- border: 2px solid white;
-}
-.rightBarUserName{
-font-weight: 500;
-}
-
-.rightBarTitleFirstPart{
-    font-size:18px;
-    font-weight: 500px;
-    margin-bottom: 10px;
-}
-
-.rigthbarFollowingIma{
-    width: 100px;
-    height: 100px;
-    object-fit: cover;border-radius:5px;
-}
-
-.rigthBarInfo{
-    margin-bottom: 30px;
-}
-
-.rigthbarInfoItem{
-    margin-bottom: 10px;
-
-}
-
-.rigthbarInfoKey{
-    font-weight: 500px;
-    margin-bottom: 15px;
-    color: #555 ;
-}
-
-.rigthbarInfoValue{
-    font-weight: 500px;
-}
-
-.rigthbarFollowings{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 15px;
-}
-
-
-.rigthbarFollowing{
-    display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
-    cursor: pointer;
 }
-
-.rightBarFollowingButton{
-    margin-top: 30px;
-    margin-bottom: 10px;
-    border: none;
-    background-color: purple;
-    color: white;
-    border-radius: 5px;
-    padding: 5px 10px;
-    display: flex;
-     align-items: center;
-     font-size: 16px;
-     font-weight: 500;
-     cursor: pointer;
+.linksToSyllabus {
+    text-decoration: none;
+    list-style: none;
+    font-size: larger;
+    color: rgb(32, 37, 37);
+    padding: 5%;
+    font-weight: bold;
+}
+.links{
+    text-decoration: none;
+    font-family: "Kaushan Script";
+    color: black;
+    padding: 9%;
+    border-radius: 20px;
+    box-shadow: 5px 5px #888888;
 }
 
 @media only screen and (max-width: 426px) {
-    .rightBar{
-        font-size: small;
-    }
-    .rightBarWrapper{
-        padding: 2px 2px 2px 0;
-    }
-    .topicContainer{
-        flex-wrap: wrap;
-    }
-    .adImg{
-        width: 80px;
-    }
-    .rightBarTitle{
-        font-size: small;
-    }
+  .rightBar {
+    font-size: small;
+  }
+  .rightBarWrapper {
+    padding: 2px 2px 2px 0;
+  }
+  .topicContainer {
+    flex-wrap: wrap;
+  }
+  .adImg {
+    width: 80px;
+  }
+  .rightBarTitle {
+    font-size: small;
+  }
 }
