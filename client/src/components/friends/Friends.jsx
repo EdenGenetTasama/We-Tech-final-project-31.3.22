@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 
 export default function Friends({ user }) {
   const [friends, setFriends] = useState([]);
-  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  const basicApi = process.env.NODE_ENV === "production" ? "https://wetechsocial.herokuapp.com" : "http://localhost:8800";
 
   useEffect(() => {
     const getFollowers = async () => {
-      const go = await axios.get(`http://localhost:8800/users/${user}`);
+      const go = await axios.get(`${basicApi}/users/${user}`);
       setFriends(go.data);
     };
     getFollowers();
@@ -25,7 +25,7 @@ export default function Friends({ user }) {
             src={
               friends.profilePicture
                 ? friends.profilePicture
-                : PF + "/persons/noAvatar.webp"
+                : basicApi + "/images/persons/noAvatar.webp"
             }
             alt=""
           />

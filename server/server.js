@@ -12,10 +12,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use("/images", express.static(path.join(__dirname, "public/images")));
+app.use("/images", express.static(path.join(__dirname, "/public/images")));
 const storage = multer.diskStorage({
     destination:(req,file,cb)=>{
-        cb(null , "server/public/images")
+        cb(null , "/server/public/images")
     },
     filename:(req,file,cb)=>{
         cb(null, file.originalname )
