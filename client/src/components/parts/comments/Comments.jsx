@@ -17,6 +17,7 @@ export default function Comments({ post }) {
     await axios.post("http://localhost:8800/posts/" + post._id + "/comment", {
       comment: comment,
       userId: currentUser._id,
+      created:new Date()
  
     });
     // isComment?setIsComment(false):setIsComment(true);
