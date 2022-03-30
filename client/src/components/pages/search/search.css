@@ -23,3 +23,9 @@ border: 1px solid white;
 border-radius: 3%;
 box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
 }
+
+@media screen and (max-width: 320px) and (max-height: 426px)  {
+    .userInfo{
+        width: 80%;
+    }
+}
