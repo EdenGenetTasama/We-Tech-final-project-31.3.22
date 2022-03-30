@@ -1,6 +1,7 @@
 import "./popUp.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { format } from "timeago.js";
 
 
 function PopUp({ handleClose, post }) {
@@ -35,8 +36,9 @@ function PopUp({ handleClose, post }) {
                 alt=""
               />
               <h5 className="popUserName">
-                {postInfo.userName} {postInfo.userLastName}
+                {`${postInfo.userName} ${postInfo.userLastName}`} 
               </h5>
+              <span>   { comment.created?format(comment.created):""}</span>
             </div>
             <p className="commentClass">{comment.comment}</p>
           </div>
