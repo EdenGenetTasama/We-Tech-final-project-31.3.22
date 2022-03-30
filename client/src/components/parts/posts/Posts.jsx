@@ -7,18 +7,19 @@ import axios from "axios";
 import { AuthContext } from "../../../Context/AuthContext";
 import Comments from "../comments/Comments";
 import PopUp from "../popup/PopUp";
-import PopUpEditPost from "../PopUpEditPost/PopUpEditPost"
-
+import PopUpEditPost from "../PopUpEditPost/PopUpEditPost";
 
 export default function Posts({ post }) {
   const [like, setLike] = useState(post.likes.length);
   const [isLiked, setIsLiked] = useState(false);
   const [user, setUser] = useState({});
-  const basicApi = process.env.NODE_ENV === "production" ? "https://wetechsocial.herokuapp.com" : "http://localhost:8800";
+  const basicApi =
+    process.env.NODE_ENV === "production"
+      ? "https://wetechsocial.herokuapp.com"
+      : "http://localhost:8800";
   const { user: currentUser } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenEdit, setIsOpenEdit] = useState(false);
-
 
   useEffect(() => {
     setIsLiked(post.likes.includes(currentUser._id));
@@ -45,24 +46,29 @@ export default function Posts({ post }) {
   };
 
   const deletePost = async () => {
-    try{
-      await axios.delete(`${basicApi}/posts/${post._id}`,{ data: { id: currentUser._id }, headers: { "Authorization": "***" } });
-      window.confirm("Are you sure you want to delete this post?")
-        window.location.reload();
-  
+    try {
+      if (post.userId != currentUser._id) {
+        alert("You cant delete if its not your post");
       }
-      catch(err){alert("You cant delete if its not your post")}
-    
+      await axios.delete(`${basicApi}/posts/${post._id}`, {
+        data: { id: currentUser._id },
+        headers: { Authorization: "***" },
+      });
+      window.confirm("Are you sure you want to delete this post?");
+      window.location.reload();
+    } catch (err) {
+      console.log(err);
+    }
   };
-
 
   const togglePopup = () => {
     setIsOpen(!isOpen);
   };
 
   const togglePopupEdit = () => {
-    setIsOpenEdit(!isOpenEdit);
-    console.log(isOpenEdit)
+    post.userId != currentUser._id
+      ? alert("You cant edit if its not your post")
+      : setIsOpenEdit(!isOpenEdit);
   };
   return (
     <div className="postContainer">
@@ -88,7 +94,9 @@ export default function Posts({ post }) {
           </div>
 
           <div className="postTopRight">
-          {isOpenEdit && <PopUpEditPost handleClose={togglePopupEdit} postToEdit={post} />}
+            {isOpenEdit && (
+              <PopUpEditPost handleClose={togglePopupEdit} postToEdit={post} />
+            )}
             <Edit onClick={togglePopupEdit} />
             <br />
             <br />
@@ -98,7 +106,11 @@ export default function Posts({ post }) {
         </div>
         <div className="postCenter">
           <span className="postText">{post?.desc}</span>
-          <img className="postImage" src={basicApi+ "/images/" + post.img} alt="" />
+          <img
+            className="postImage"
+            src={basicApi + "/images/" + post.img}
+            alt=""
+          />
         </div>
 
         <div className="postBottom">

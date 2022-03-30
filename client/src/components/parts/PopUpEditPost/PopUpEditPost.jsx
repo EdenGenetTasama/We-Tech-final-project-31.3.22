@@ -4,6 +4,7 @@ import { useState, useContext } from "react";
 import axios from "axios";
 
 
+
 export default function PopUpEditPost({ handleClose, postToEdit }) {
   const { user: currentUser } = useContext(AuthContext);
   const [inputEdit, setInputEdit] = useState({});
@@ -11,6 +12,9 @@ export default function PopUpEditPost({ handleClose, postToEdit }) {
 const updatePostButton=()=>{
   try{
     axios.put(`http://localhost:8800/posts/${postToEdit._id}` , { userId: currentUser._id , desc: inputEdit })
+    alert("Changes Saved successfully");
+    window.location.reload();
+
   }
   catch(err){
     alert("Something went wrong")
