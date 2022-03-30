@@ -42,7 +42,6 @@ module.exports = {
         await post.deleteOne()
         res.status(200).json({ message: 'The post as been deleted' })
       } else {
-        console.log(req.body)
         res.status(403).json({ message: 'you can delete only your post' })
       }
     } catch (err) {
@@ -57,7 +56,6 @@ module.exports = {
         res.status(200).json('The post has been liked')
       } else {
         await Post.updateOne({ $pull: { likes: req.body.userId } })
-        console.log(Post)
         res.status(200).json('The post has been disliked')
       }
     } catch (err) {

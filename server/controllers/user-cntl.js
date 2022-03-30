@@ -111,7 +111,6 @@ module.exports = {
           res.status(200).json('user has been unfollowed')
         } else {
           res.status(403).json('you dont follow this user')
-          console.log(user, currentUser);
         }
       } catch (err) {
         res.status(500).json(err)
