@@ -55,14 +55,6 @@ export default function Posts({ post }) {
     
   };
 
-  const editPost= async()=>{
-    try{
-
-    }
-    catch(err){
-      console.log(err)
-    }
-  }
 
   const togglePopup = () => {
     setIsOpen(!isOpen);
@@ -84,7 +76,7 @@ export default function Posts({ post }) {
                 src={
                   user.profilePicture
                     ? user.profilePicture
-                    : PF + "/persons/noAvatar.webp"
+                    : basicApi + "/images/persons/noAvatar.webp"
                 }
                 alt=""
               />
@@ -107,7 +99,7 @@ export default function Posts({ post }) {
 
         <div className="postCenter">
           <span className="postText">{post?.desc}</span>
-          <img className="postImage" src={PF + "/" + post.img} alt="" />
+          <img className="postImage" src={basicApi+ "/" + post.img} alt="" />
         </div>
 
         <div className="postBottom">

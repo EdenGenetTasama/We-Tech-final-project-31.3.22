@@ -37,7 +37,7 @@ export default function Profile() {
                 src={
                   user.coverPicture
                     ? user.coverPicture
-                    : PF+"/persons/noCover.png"
+                    : basicApi+"/images/persons/noCover.png"
                 }
                 alt="Cover pic is not available"
               />
@@ -46,7 +46,7 @@ export default function Profile() {
                 src={
                   user.profilePicture
                     ? user.profilePicture
-                    : PF+"/persons/noAvatar.webp"
+                    : basicApi+"/images/persons/noAvatar.webp"
                 }
                 alt="Profile pic is not available"
               />

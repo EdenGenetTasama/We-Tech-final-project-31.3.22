@@ -35,7 +35,7 @@ export default function SearchFriends() {
       {userFind.map((user) => 
       
       <div className="userInfo" key={user._id}>
-            <div><Link to={"/profile/"+user.userName}><img src={user.profilePicture?user.profilePicture:PF + "/persons/noAvatar.webp"} alt=""  className="profilePicture"/></Link></div>
+            <div><Link to={"/profile/"+user.userName}><img src={user.profilePicture?user.profilePicture:basicApi + "/images//persons/noAvatar.webp"} alt=""  className="profilePicture"/></Link></div>
             <div>{user.userName} {user.userLastName}</div>
             <div>From : {user.from? user.from : "UnKnow" }  <br/>Live's in : {user.city? user.city: "UnKnow"} </div>
             <div>Friends : {user.followings? `${user.followings.length} Followings` :"0 followings"}</div>

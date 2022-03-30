@@ -46,7 +46,7 @@ export default function Share() {
             src={
               user.profilePicture
                 ? user.profilePicture
-                : PF + "/persons/noAvatar.webp"
+                : basicApi+ "/images/persons/noAvatar.webp"
             }
             alt=""
           />
