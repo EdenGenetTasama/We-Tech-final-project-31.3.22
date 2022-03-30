@@ -96,10 +96,9 @@ export default function Posts({ post }) {
             {/* <MoreVert /> */}
           </div>
         </div>
-
         <div className="postCenter">
           <span className="postText">{post?.desc}</span>
-          <img className="postImage" src={basicApi+ "/" + post.img} alt="" />
+          <img className="postImage" src={basicApi+ "/images/" + post.img} alt="" />
         </div>
 
         <div className="postBottom">
