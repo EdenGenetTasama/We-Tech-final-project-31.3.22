@@ -9,7 +9,8 @@ import {Add, Remove} from "@material-ui/icons";
 
 export default function Rightbar({ user }) {
   const [friends, setFriends] = useState([]);
-  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  const basicApi = process.env.NODE_ENV === "production" ? "https://wetechsocial.herokuapp.com" : "http://localhost:8800";
+  
   const {user:currentUser,dispatch}=useContext(AuthContext);
   const [followed,setFollowed]= useState(false);
 
@@ -23,7 +24,7 @@ export default function Rightbar({ user }) {
     const getFriends = async () => {
       try {
         if(user&&user._id ){
-          const friendList = await axios.get("http://localhost:8800/users/friends/" + user._id);
+          const friendList = await axios.get(`${basicApi}/users/friends/` + user._id);
           setFriends(friendList.data);
         }
       } 
@@ -37,13 +38,13 @@ export default function Rightbar({ user }) {
   const handleClick =async ()=>{
     try {
       if (followed) {
-        await axios.put("http://localhost:8800/users/"+currentUser._id+"/unfollow",{
+        await axios.put(`${basicApi}/users/`+currentUser._id+"/unfollow",{
           userId:user._id,
         });
          dispatch({type:"UNFOLLOW",payload:user._id})
       }
       else{
-        await axios.put("http://localhost:8800/users/"+currentUser._id+"/follow",{
+        await axios.put(`${basicApi}/users/`+currentUser._id+"/follow",{
           userId:user._id,
         });
          dispatch({type:"FOLLOW",payload:user._id})
@@ -131,7 +132,7 @@ export default function Rightbar({ user }) {
             <Link key={friend._id} to={"/profile/"+ friend.userName} style={{ textDecoration: "none" }} > 
               <div className="rigthbarFollowing">
                 <img
-                  src={friend.profilePicture ? friend.profilePicture : PF+"/persons/noAvatar.webp"}
+                  src={friend.profilePicture ? friend.profilePicture : basicApi+"/images/persons/noAvatar.webp"}
                   alt=""
                   className="rigthbarFollowingIma"
                   />
