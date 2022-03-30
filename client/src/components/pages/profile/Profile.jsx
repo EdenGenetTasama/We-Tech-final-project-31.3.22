@@ -11,12 +11,12 @@ import "./profile.css";
 
 export default function Profile() {
   const [user, setUser] = useState({});
-  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  const basicApi = process.env.NODE_ENV === "production" ? "https://wetechsocial.herokuapp.com" : "http://localhost:8800";
   const userName = useParams().userName;
 
   useEffect(() => {
     const fetchUser = async () => {
-      const res = await axios.get( `http://localhost:8800/users/?username=${userName}`);
+      const res = await axios.get( `${basicApi}/users/?username=${userName}`);
       setUser(res.data);
     };
     fetchUser();

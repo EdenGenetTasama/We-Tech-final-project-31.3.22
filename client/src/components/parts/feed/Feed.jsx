@@ -8,6 +8,7 @@ import axios from "axios";
 export default function Feed({ username }) {
   const [post, setPost] = useState([]);
   const { user } = useContext(AuthContext);
+  const basicApi = process.env.NODE_ENV === "production" ? "https://wetechsocial.herokuapp.com" : "http://localhost:8800";
 
 
   useEffect(() => {
@@ -15,8 +16,8 @@ export default function Feed({ username }) {
      
       if (user) {
         const res = username
-          ? await axios.get("http://localhost:8800/posts/profile/" + username)
-          : await axios.get("http://localhost:8800/posts/timeline/" + user._id)
+          ? await axios.get(`${basicApi}/posts/profile/` + username)
+          : await axios.get(`${basicApi}/posts/timeline/` + user._id)
         setPost(
           res.data.sort((p1, p2) => {
             return new Date(p2.createdAt) - new Date(p1.createdAt);
