@@ -7,6 +7,8 @@ import axios from "axios";
 import { AuthContext } from "../../../Context/AuthContext";
 import Comments from "../comments/Comments";
 import PopUp from "../popup/PopUp";
+import PopUpEditPost from "../PopUpEditPost/PopUpEditPost"
+
 
 export default function Posts({ post }) {
   const [like, setLike] = useState(post.likes.length);
@@ -15,6 +17,8 @@ export default function Posts({ post }) {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const { user: currentUser } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpenEdit, setIsOpenEdit] = useState(false);
+
 
   useEffect(() => {
     setIsLiked(post.likes.includes(currentUser._id));
@@ -41,13 +45,32 @@ export default function Posts({ post }) {
   };
 
   const deletePost = async () => {
-    await axios.delete(`http://localhost:8800/posts/${post._id}`, {
-      id: currentUser._id 
-    });
+    try{
+      await axios.delete(`http://localhost:8800/posts/${post._id}`,{ data: { id: currentUser._id }, headers: { "Authorization": "***" } });
+      window.confirm("Are you sure you want to delete this post?")
+        window.location.reload();
+  
+      }
+      catch(err){alert("You cant delete if its not your post")}
+    
   };
+
+  const editPost= async()=>{
+    try{
+
+    }
+    catch(err){
+      console.log(err)
+    }
+  }
 
   const togglePopup = () => {
     setIsOpen(!isOpen);
+  };
+
+  const togglePopupEdit = () => {
+    setIsOpenEdit(!isOpenEdit);
+    console.log(isOpenEdit)
   };
   return (
     <div className="postContainer">
@@ -73,7 +96,8 @@ export default function Posts({ post }) {
           </div>
 
           <div className="postTopRight">
-            <Edit />
+          {isOpenEdit && <PopUpEditPost handleClose={togglePopupEdit} postToEdit={post} />}
+            <Edit onClick={togglePopupEdit} />
             <br />
             <br />
             <Delete onClick={deletePost} />
