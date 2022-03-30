@@ -14,6 +14,8 @@ export default function Register() {
   const password = useRef();
   const confirmPassword = useRef();
   const navigate = useNavigate();
+  const basicApi = process.env.NODE_ENV === "production" ? "https://wetechsocial.herokuapp.com" : "http://localhost:8800";
+
 
   const HandleClick =async (e) => {
     e.preventDefault();
@@ -31,7 +33,7 @@ export default function Register() {
         from: from.current.value,
       };
       try {
-       await axios.post("http://localhost:8800/auth/register", user);
+       await axios.post(`${basicApi}/auth/register`, user);
         console.log(user);
         navigate("/login");
       } catch (error) {

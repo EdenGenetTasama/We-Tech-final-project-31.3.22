@@ -14,7 +14,7 @@ export default function Posts({ post }) {
   const [like, setLike] = useState(post.likes.length);
   const [isLiked, setIsLiked] = useState(false);
   const [user, setUser] = useState({});
-  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  const basicApi = process.env.NODE_ENV === "production" ? "https://wetechsocial.herokuapp.com" : "http://localhost:8800";
   const { user: currentUser } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenEdit, setIsOpenEdit] = useState(false);
@@ -27,7 +27,7 @@ export default function Posts({ post }) {
   useEffect(() => {
     const FetchUser = async () => {
       const respond = await axios.get(
-        `http://localhost:8800/users/?userId=${post.userId}`
+        `${basicApi}/users/?userId=${post.userId}`
       );
       setUser(respond.data);
     };
@@ -36,7 +36,7 @@ export default function Posts({ post }) {
 
   const likeHandler = () => {
     try {
-      axios.put("http://localhost:8800/posts/" + post._id + "/like", {
+      axios.put(`${basicApi}/posts/` + post._id + "/like", {
         userId: currentUser._id,
       });
     } catch (err) {}
@@ -46,7 +46,7 @@ export default function Posts({ post }) {
 
   const deletePost = async () => {
     try{
-      await axios.delete(`http://localhost:8800/posts/${post._id}`,{ data: { id: currentUser._id }, headers: { "Authorization": "***" } });
+      await axios.delete(`${basicApi}/posts/${post._id}`,{ data: { id: currentUser._id }, headers: { "Authorization": "***" } });
       window.confirm("Are you sure you want to delete this post?")
         window.location.reload();
   

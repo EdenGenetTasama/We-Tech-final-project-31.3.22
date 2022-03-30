@@ -10,7 +10,7 @@ export default function Topbar() {
   const { user } = useContext(AuthContext);
   const [searchFriends , setSearchFriends] = useState({});
 
-  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  const basicApi = process.env.NODE_ENV === "production" ? "https://wetechsocial.herokuapp.com" : "http://localhost:8800";
   const { dispatch } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -60,7 +60,7 @@ export default function Topbar() {
             src={
               user.profilePicture
                 ? user.profilePicture
-                : PF + "/persons/noAvatar.webp"
+                : basicApi + "/persons/noAvatar.webp"
             }
             alt="profileImage"
             className="topbarImage"

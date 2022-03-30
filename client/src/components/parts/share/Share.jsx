@@ -7,7 +7,7 @@ import axios from "axios";
 export default function Share() {
   const [file, setFile] = useState(null);
   const { user } = useContext(AuthContext);
-  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  const basicApi = process.env.NODE_ENV === "production" ? "https://wetechsocial.herokuapp.com" : "http://localhost:8800";
   const desc = useRef();
 
   const submitHandler = async (e) => {
@@ -24,13 +24,13 @@ export default function Share() {
       data.append("name", fileName);
       newPost.img = fileName;
       try {
-        await axios.post("http://localhost:8800/server/upload", data);
+        await axios.post(`${basicApi}/server/upload`, data);
       } catch (err) {
         console.log(err);
       }
     }
     try {
-      await axios.post("http://localhost:8800/posts", newPost);
+      await axios.post(`${basicApi}/posts`, newPost);
       window.location.reload();
     } catch (err) {
       console.log(err);

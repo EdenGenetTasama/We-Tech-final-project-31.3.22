@@ -6,10 +6,11 @@ import { AuthContext } from "../../../Context/AuthContext";
 export default function Comments({ post }) {
   const [comment, setComment] = useState();
   const { user: currentUser } = useContext(AuthContext);
+  const basicApi = process.env.NODE_ENV === "production" ? "https://wetechsocial.herokuapp.com" : "http://localhost:8800";
 
 
   const postAComment = async () => {
-    await axios.post("http://localhost:8800/posts/" + post._id + "/comment", {
+    await axios.post(`${basicApi}/posts/` + post._id + "/comment", {
       comment: comment,
       userId: currentUser._id,
       created:new Date()

@@ -6,11 +6,12 @@ import { format } from "timeago.js";
 
 function PopUp({ handleClose, post }) {
   const [postInfo, setPostInfo] = useState({});
+  const basicApi = process.env.NODE_ENV === "production" ? "https://wetechsocial.herokuapp.com" : "http://localhost:8800";
 
   useEffect(() => {
     post.comments.map((comment) => {
       const user = axios
-        .get("http://localhost:8800/users/" + comment.userId)
+        .get(`${basicApi}/users/` + comment.userId)
         .then((res) => setPostInfo(res.data));
       // setPostInfo(user)
     });

@@ -12,12 +12,12 @@ import { Link } from "react-router-dom";
 export default function SearchFriends() {
   const userName = useParams().userName;
   const [userFind, setUserFind] = useState([]);
-  const PF= process.env.REACT_APP_PUBLIC_FOLDER;
+  const basicApi = process.env.NODE_ENV === "production" ? "https://wetechsocial.herokuapp.com" : "http://localhost:8800";
   
   useEffect(() => {
     const fetchUserByName = async () => {
       const res = await axios.get(
-        `http://localhost:8800/users/getByUserName?username=${userName}`
+        `${basicApi}/users/getByUserName?username=${userName}`
       );
       setUserFind(res.data);
     };
