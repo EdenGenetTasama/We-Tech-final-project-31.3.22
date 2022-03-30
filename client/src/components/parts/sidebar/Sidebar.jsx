@@ -7,6 +7,7 @@ import { AuthContext } from "../../../Context/AuthContext";
 
 export default function Sidebar() {
   const { user, setUser } = useContext(AuthContext);
+
   return (
     <div className="sidebar">
       <div className="sideBarWrapper">
@@ -28,8 +29,8 @@ export default function Sidebar() {
             <span>People</span>
           </li>
         </ul>
-        <button className="sideBarBtn">Show More</button>
         <hr className="sideBarHr" />
+        <h6>My Followings</h6>
         <ul className="sideBarFriendList">
           {user.followers? user.followers.map((userItem) => 
                 <Friends key={userItem} user={userItem} />

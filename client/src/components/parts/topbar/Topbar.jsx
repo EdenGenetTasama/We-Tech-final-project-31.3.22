@@ -33,7 +33,7 @@ export default function Topbar() {
     <div className="topBarContainer">
       <div className="topBarLeft">
         <Link to="/" style={{ textDecoration: "none" }}>
-          <span className="logoName">logo</span>
+          <span className="logoName">WeTech</span>
         </Link>
       </div>
       <div className="topBarCenter">
@@ -51,7 +51,7 @@ export default function Topbar() {
       </div>
 
       <div className="topBarRight">
-        <Button variant="contained" color="secondary" size="small" onClick={logOutBut}>
+        <Button variant="contained" color="info"  size="small" onClick={logOutBut}>
         logout
         </Button>
 
