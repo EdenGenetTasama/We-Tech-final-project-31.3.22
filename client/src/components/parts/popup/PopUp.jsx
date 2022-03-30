@@ -2,6 +2,8 @@ import "./popUp.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { format } from "timeago.js";
+import { Link } from "react-router-dom";
+
 
 
 function PopUp({ handleClose, post }) {
@@ -31,11 +33,11 @@ function PopUp({ handleClose, post }) {
         {post.comments.map((comment) => (
           <div className="popup-box-container">
             <div className="popup-Comments">
-              <img
+              <Link to={"/profile/"+postInfo.userName}><img
                 className="popUpProfileImage"
                 src={postInfo.profilePicture}
                 alt=""
-              />
+              /></Link>
               <h5 className="popUserName">
                 {`${postInfo.userName} ${postInfo.userLastName}`} 
               </h5>

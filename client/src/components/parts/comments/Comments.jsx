@@ -3,6 +3,7 @@ import "./comments.css";
 import axios from "axios";
 import { AuthContext } from "../../../Context/AuthContext";
 
+
 export default function Comments({ post }) {
   const [comment, setComment] = useState();
   const { user: currentUser } = useContext(AuthContext);
