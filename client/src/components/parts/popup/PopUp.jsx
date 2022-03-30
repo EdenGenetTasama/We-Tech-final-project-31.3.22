@@ -21,7 +21,7 @@ function PopUp({ handleClose, post }) {
   // console.log(postInfo.profilePicture)
   return (
     <div className="popup-box">
-      <div className="box">
+      <div className="boxComments">
         <span className="close-icon" onClick={handleClose}>
           x
         </span>

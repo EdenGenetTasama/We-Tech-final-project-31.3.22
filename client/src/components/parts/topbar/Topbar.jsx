@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../../Context/AuthContext";
 import Button from "@material-ui/core/Button";
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 export default function Topbar() {
   const { user } = useContext(AuthContext);
@@ -16,8 +16,9 @@ export default function Topbar() {
 
 
   const logOutBut = () => {
-    if (localStorage.user) {
+    if (localStorage.user ) {
       localStorage.removeItem("user");
+      localStorage.removeItem("isDark");
       window.location.reload();
       navigate("/Login");
       dispatch({});
