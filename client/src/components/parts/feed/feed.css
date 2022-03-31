@@ -6,17 +6,22 @@
     padding: 20px;
 }
 
-@media screen and (max-width: 320px) and (max-height: 426px) {
-    *{
-        padding: 0;
-        margin: 0;
-    }
-    .feedWrapper{
-        padding: 0;
-        /* padding-left: 5px; */
-        width: 130%;
-    }
-    .feed{
-        width: 70%;
-    }
+@media only screen and (max-width: 320px){
+    .feedWrapper {
+      padding: 1px;
   }
+    .postContainer {
+        width: 92%;
+        border-radius: 10px;
+        box-shadow: 0px 0px 16px -8px rgb(0 0 0 / 68%);
+        margin: 30px 0px;
+      }
+      .inputComment {
+        width: 75%;
+        height: 30px;
+        background-color: white;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+      }
+}

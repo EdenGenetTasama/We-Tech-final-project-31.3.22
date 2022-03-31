@@ -1,81 +1,76 @@
 .share-container {
-    width: 100%;
-    height: 170px;
-    border-radius: 10px;
-    -webkit-box-shadow: 0px 0px 16px -8px rgba(0,0,0,0.68); 
-    box-shadow: 0px 0px 16px -8px rgba(0,0,0,0.68);
+  width: 100%;
+  height: 170px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
 }
 
-.shareWrapper{
-    padding: 10px;
-
+.shareWrapper {
+  padding: 10px;
 }
-.shareTop{
-    display: flex;
-    align-items: center;
+.shareTop {
+  display: flex;
+  align-items: center;
 }
-.shareInput{
-    border:none;
-    width: 80%;
-
+.shareInput {
+  border: none;
+  width: 80%;
 }
 
-.shareHR{
-    margin: 20px;
+.shareHR {
+  margin: 20px;
 }
 
-.shareButton{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.shareButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.shareOptions{
-    display: flex;
-    margin-left: 15px;
-    cursor: pointer;
+.shareOptions {
+  display: flex;
+  margin-left: 15px;
+  cursor: pointer;
 }
 
-.shareOption{
-    display: flex;
-    align-items: center;
-    margin: 10px;
+.shareOption {
+  display: flex;
+  align-items: center;
+  margin: 10px;
 }
-.shareInput:focus{
-    outline:none;
+.shareInput:focus {
+  outline: none;
 }
-.shareProfileImage{
-    width: 50px;
-    height: 50px;
-    border-radius:50%;
-    object-fit: cover;
-    margin-right: 10px;
-
-}
-
-.shareIcon{
-    font-size:18px;
-    margin-right: 3px;
-    cursor: pointer;
-
+.shareProfileImage {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
 }
 
-.shareOptionText{
-    font-size:14px;
-    font-weight: 500px;
+.shareIcon {
+  font-size: 18px;
+  margin-right: 3px;
+  cursor: pointer;
 }
 
-.btnShare{
-    border:none;
-    padding: 7px;
-    border-radius:5px;
-    background-color: rgb(14, 124, 60);
-    color: white;
-    font-weight: 500px;
-    margin-right: 20px;
-    cursor: pointer;
+.shareOptionText {
+  font-size: 14px;
+  font-weight: 500px;
 }
 
+.btnShare {
+  border: none;
+  padding: 7px;
+  border-radius: 5px;
+  background-color: rgb(14, 124, 60);
+  color: white;
+  font-weight: 500px;
+  margin-right: 20px;
+  cursor: pointer;
+}
 
 /* @media only screen and (max-width: 426px) {
     .shareWrapper{
@@ -96,19 +91,50 @@
     }
   } */
 
-  @media screen and (max-width: 320px) and (max-height: 426px)  {
-      .share-container{
-            width: 70%;
-            height: 170px;
-            border-radius: 10px;
-            -webkit-box-shadow: 0px 0px 16px -8px rgba(0,0,0,0.68); 
-            box-shadow: 0px 0px 16px -8px rgba(0,0,0,0.68);
-      }
-      .shareOptions{
-            width: 30%;
-      }
-      .shareOption{
-          width: 30%;
-      }
-
+@media only screen and (max-width: 320px) {
+  .share-container {
+    width: 95%;
+    height: 170px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 16px -8px rgb(0 0 0 / 68%);
   }
+  .shareWrapper {
+    padding: 0px;
+  }
+  .shareButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .shareOptions {
+    display: flex;
+    margin-left: 1px;
+    cursor: pointer;
+  }
+  .shareOptionText {
+    font-size: 7px;
+    font-weight: 100px;
+  }
+
+  .inputComment {
+    width: 75%;
+    height: 30px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .rightBar {
+    display: none;
+  }
+  .searchbar {
+    width: 100%;
+    height: 30px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

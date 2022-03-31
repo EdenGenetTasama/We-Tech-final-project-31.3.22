@@ -1,95 +1,96 @@
 .postContainer {
-    width: 100%;
-    border-radius: 10px;
-    -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
-    box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
-    margin: 30px 0px;
+  width: 100%;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  margin: 30px 0px;
 }
 
 .postWrapper {
-    padding: 10px;
+  padding: 10px;
 }
 
 .postTop {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .postTopLeft {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .postProfileImage {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .postUserName {
-    font-size: 15px;
-    font-weight: 600px;
-    font-weight: bold;
-    margin: 0 10px;
-
+  font-size: 15px;
+  font-weight: 600px;
+  font-weight: bold;
+  margin: 0 10px;
 }
 
 .postUserDate {
-    font-size: 12px;
+  font-size: 12px;
 }
 
 .postCenter {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
 .postImage {
-    margin-top: 20px;
-    width: 100%;
-    max-height: 500px;
-    object-fit: contain;
+  margin-top: 20px;
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
 }
 
 .postBottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .postBottomLeft {
-    display: flex;
-
+  display: flex;
 }
 
 .LikeIcon {
-    width: 24px;
-    height: 24px;
-    margin-right: 5px;
-    cursor: pointer;
-
-
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+  cursor: pointer;
 }
 
 .postLikeCounter {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 .postCommentText {
-    cursor: pointer;
-    border-bottom: 1px dashed grey;
-    font-size: 15px;
-
+  cursor: pointer;
+  border-bottom: 1px dashed grey;
+  font-size: 15px;
 }
 
-@media screen and (max-width: 320px) and (max-height: 426px) {
-    .postContainer{
-        width: 108%;
-   } 
-    .postWrapper{
-        width: 100%;
-    }
-
-
+@media only screen and (max-width: 320px) {
+  .postContainer {
+    width: 92%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 16px -8px rgb(0 0 0 / 68%);
+    margin: 30px 0px;
+  }
+  .inputComment {
+    width: 75%;
+    height: 30px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
