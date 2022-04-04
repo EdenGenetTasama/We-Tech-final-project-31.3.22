@@ -8,6 +8,8 @@
 
 @media only screen and (max-width: 320px){
     .feedWrapper {
+      width: 100vw;
+      height: 100vh;
       padding: 1px;
   }
     .postContainer {
@@ -25,3 +27,4 @@
         align-items: center;
       }
 }
+

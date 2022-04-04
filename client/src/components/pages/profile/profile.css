@@ -39,7 +39,7 @@
 }
 
 @media only screen and (max-width: 320px){ 
-    .profile{
+    /* .profile{
         flex-direction: column;
     }
     .profileRight{
@@ -66,6 +66,14 @@
     }
     .profileInfoName{
         font-size: medium;
+    } */
+
+    .profile{
+        display: flex;
     }
+    .profileRight{
+        flex: 6;
+    }
+
 }
     

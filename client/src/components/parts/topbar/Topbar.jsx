@@ -3,7 +3,7 @@ import { Person, Search, Chat, Notifications } from "@material-ui/icons";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../../Context/AuthContext";
-import Button from "@material-ui/core/Button";
+// import Button from "@material-ui/core/Button";
 import {useState, useEffect} from 'react';
 
 export default function Topbar() {
@@ -51,11 +51,11 @@ export default function Topbar() {
       </div>
 
       <div className="topBarRight">
-        <Button variant="contained" color="info"  size="small" onClick={logOutBut}>
+        <button className="logoutBtn"  onClick={logOutBut}>
         logout
-        </Button>
+        </button>
 
-{user? <Link to={`/profile/${user.userName}`}>
+{user? <Link to={`/profile/${user.userName}`} className="linkImg">
           <img
             src={
               user.profilePicture
