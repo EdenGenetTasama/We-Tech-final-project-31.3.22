@@ -91,7 +91,7 @@
   border-radius: 48%;
   object-fit: cover;
   cursor: pointer;
-  margin-right: 90px;
+  /* margin-right: 90px; */
 }
 
 .searchButton {
@@ -106,6 +106,8 @@
   align-items: center;
   justify-content: center;
 }
+
+
 
 @media only screen and (max-width: 320px) {
   .logoName {
@@ -124,7 +126,7 @@
   }
   .searchButton {
     width: 60px;
-    height: 30px;
+    height: 20px;
     border-radius: 12%;
     background-color: grey;
     color: black;
@@ -136,10 +138,10 @@
   }
   .searchInput {
     border: none;
-    width: 15%;
+    width: 100%;
   }
   .searchbar {
-    width: fit-content;
+    width: 100%;
     height: fit-content;
     background-color: white;
     border-radius: 30px;
@@ -148,4 +150,25 @@
     align-items: center;
   }
 
+  .logoutBtn{
+    width: fit-content;
+    height: 20px;
+    color: black;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  .topBarCenter{
+    width: 100%;
+  }
+  .topBarRight{
+    position: relative;
+  }
+  .topBarRight{
+    width: 20%;
+  }
+  .linkImg{
+    width: fit-content;
+  }
 }
